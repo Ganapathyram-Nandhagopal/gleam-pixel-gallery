@@ -60,20 +60,20 @@ const Services = () => {
     <div className="min-h-screen">
       <Navbar />
       
-      <main className="pt-32 pb-20">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
+      <main className="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-24">
           {/* Hero Section */}
-          <div className="text-center mb-20 animate-fade-in">
-            <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6">
+          <div className="text-center mb-12 sm:mb-16 md:mb-20 animate-fade-in">
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6">
               Our <span className="gradient-text">Services</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
               Comprehensive solutions for modern businesses—from ERP implementation to custom web development.
             </p>
           </div>
 
           {/* Services Grid */}
-          <div className="space-y-20">
+          <div className="space-y-12 sm:space-y-16 md:space-y-20">
             {services.map((service, index) => (
               <div
                 key={index}

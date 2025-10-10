@@ -60,18 +60,18 @@ const Blog = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
-      <main className="flex-1 pt-24 pb-24 px-6 md:px-12 lg:px-24">
+      <main className="flex-1 pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20 md:pb-24 px-4 sm:px-6 md:px-12 lg:px-24">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16 space-y-4 animate-fade-in">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
+          <div className="text-center mb-12 sm:mb-16 space-y-4 animate-fade-in">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
               Design <span className="gradient-text">Insights</span>
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
               Thoughts, ideas, and lessons learned from years of crafting digital experiences
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {blogPosts.map((post, index) => (
               <Link key={post.id} to={`/blog/${post.id}`}>
                 <Card 

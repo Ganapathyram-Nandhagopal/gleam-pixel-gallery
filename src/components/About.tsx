@@ -7,14 +7,14 @@ const skills = [
 
 const About = () => {
   return (
-    <section className="py-24 px-6 md:px-12 lg:px-24 bg-muted/30">
+    <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-12 lg:px-24 bg-muted/30">
       <div className="max-w-5xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
           <div className="space-y-6 animate-slide-up">
-            <h2 className="text-4xl md:text-5xl font-bold">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
               About <span className="gradient-text">Me</span>
             </h2>
-            <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
+            <div className="space-y-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
               <p>
                 I'm a UI/UX designer passionate about creating digital experiences 
                 that are both beautiful and functional. With over 8 years of experience, 

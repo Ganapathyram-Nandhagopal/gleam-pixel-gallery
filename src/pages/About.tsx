@@ -27,20 +27,20 @@ const About = () => {
     <div className="min-h-screen">
       <Navbar />
       
-      <main className="pt-32 pb-20">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
+      <main className="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-24">
           {/* Hero Section */}
-          <div className="mb-20 animate-fade-in">
-            <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6">
+          <div className="mb-12 sm:mb-16 md:mb-20 animate-fade-in">
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6">
               About <span className="gradient-text">Me</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl">
               A passionate designer and developer crafting premium digital experiences with a focus on ERP solutions and modern web applications.
             </p>
           </div>
 
           {/* Story Section */}
-          <div className="grid md:grid-cols-2 gap-12 mb-20">
+          <div className="grid md:grid-cols-2 gap-8 sm:gap-12 mb-12 sm:mb-16 md:mb-20">
             <div className="animate-slide-up">
               <h2 className="font-serif text-3xl font-bold mb-6">My Story</h2>
               <p className="text-muted-foreground mb-4">

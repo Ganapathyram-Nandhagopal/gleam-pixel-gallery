@@ -38,24 +38,24 @@ const Contact = () => {
     <div className="min-h-screen">
       <Navbar />
       
-      <main className="pt-32 pb-20">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
+      <main className="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-24">
           {/* Hero Section */}
-          <div className="text-center mb-20 animate-fade-in">
-            <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6">
+          <div className="text-center mb-12 sm:mb-16 md:mb-20 animate-fade-in">
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6">
               Let's <span className="gradient-text">Connect</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
               Have a project in mind? Let's discuss how we can help bring your vision to life.
             </p>
           </div>
 
           {/* Content Grid */}
-          <div className="grid lg:grid-cols-5 gap-12 mb-20">
+          <div className="grid lg:grid-cols-5 gap-8 sm:gap-12 mb-12 sm:mb-16 md:mb-20">
             {/* Contact Form */}
             <div className="lg:col-span-3 animate-slide-up">
-              <div className="bg-card border rounded-3xl p-8 md:p-12">
-                <h2 className="font-serif text-3xl font-bold mb-6">Send a Message</h2>
+              <div className="bg-card border rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12">
+                <h2 className="font-serif text-2xl sm:text-3xl font-bold mb-6">Send a Message</h2>
                 <form className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>

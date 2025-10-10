@@ -59,20 +59,20 @@ const Clients = () => {
     <div className="min-h-screen">
       <Navbar />
       
-      <main className="pt-32 pb-20">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
+      <main className="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-24">
           {/* Hero Section */}
-          <div className="text-center mb-20 animate-fade-in">
-            <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6">
+          <div className="text-center mb-12 sm:mb-16 md:mb-20 animate-fade-in">
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6">
               Trusted by <span className="gradient-text">Industry Leaders</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
               We're proud to partner with amazing companies across diverse industries to deliver exceptional results.
             </p>
           </div>
 
           {/* Stats Section */}
-          <div className="grid md:grid-cols-4 gap-8 mb-20">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-12 sm:mb-16 md:mb-20">
             {[
               { number: "50+", label: "Projects Completed" },
               { number: "30+", label: "Happy Clients" },
