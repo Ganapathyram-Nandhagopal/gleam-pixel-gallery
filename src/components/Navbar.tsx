@@ -20,6 +20,30 @@ const Navbar = () => {
               Home
             </NavLink>
             <NavLink 
+              to="/about" 
+              className={({ isActive }) => 
+                isActive ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground transition-colors"
+              }
+            >
+              About
+            </NavLink>
+            <NavLink 
+              to="/services" 
+              className={({ isActive }) => 
+                isActive ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground transition-colors"
+              }
+            >
+              Services
+            </NavLink>
+            <NavLink 
+              to="/clients" 
+              className={({ isActive }) => 
+                isActive ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground transition-colors"
+              }
+            >
+              Clients
+            </NavLink>
+            <NavLink 
               to="/blog" 
               className={({ isActive }) => 
                 isActive ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground transition-colors"
@@ -27,9 +51,11 @@ const Navbar = () => {
             >
               Blog
             </NavLink>
-            <Button variant="premium" size="sm">
-              Contact
-            </Button>
+            <NavLink to="/contact">
+              <Button variant="premium" size="sm">
+                Contact
+              </Button>
+            </NavLink>
           </div>
         </div>
       </div>
