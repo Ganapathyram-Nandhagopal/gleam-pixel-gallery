@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Linkedin, Twitter, Github } from "lucide-react";
+import { Mail, Phone, Linkedin, Twitter, Github, MessageCircle, BookOpen } from "lucide-react";
 
 const Contact = () => {
   const contactInfo = [
@@ -20,10 +20,10 @@ const Contact = () => {
       link: "tel:+15551234567",
     },
     {
-      icon: MapPin,
-      title: "Location",
-      value: "San Francisco, CA",
-      link: null,
+      icon: MessageCircle,
+      title: "WhatsApp",
+      value: "+1 (555) 123-4567",
+      link: "https://wa.me/15551234567",
     },
   ];
 
@@ -31,6 +31,7 @@ const Contact = () => {
     { icon: Linkedin, link: "#", label: "LinkedIn" },
     { icon: Twitter, link: "#", label: "Twitter" },
     { icon: Github, link: "#", label: "GitHub" },
+    { icon: BookOpen, link: "/blog", label: "Blog" },
   ];
 
   return (

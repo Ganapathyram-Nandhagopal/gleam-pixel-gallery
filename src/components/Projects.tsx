@@ -50,7 +50,6 @@ const Projects = () => {
     <section className="py-24 px-6 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 space-y-4 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold">Featured Work</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             A collection of projects that showcase design excellence and user-centered thinking
           </p>
