@@ -1,13 +1,14 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { NavLink } from "react-router-dom";
-import { Code, Briefcase, Settings, Laptop } from "lucide-react";
+import { Code2, Briefcase, Cog, Monitor } from "lucide-react";
 
 const Services = () => {
   const services = [
     {
-      icon: Settings,
+      icon: Cog,
       title: "ERP Implementation",
       description: "Expert implementation of ERPNext and Odoo tailored to your business needs. Streamline your operations with powerful, open-source ERP solutions.",
       features: [
@@ -31,7 +32,7 @@ const Services = () => {
       ],
     },
     {
-      icon: Code,
+      icon: Code2,
       title: "ERP Development & Customization",
       description: "Custom ERP development and modifications using the powerful Frappe Framework to meet your unique business requirements.",
       features: [
@@ -43,7 +44,7 @@ const Services = () => {
       ],
     },
     {
-      icon: Laptop,
+      icon: Monitor,
       title: "Web/App Development",
       description: "Modern, responsive web and mobile applications built with cutting-edge technologies for exceptional user experiences.",
       features: [
@@ -73,41 +74,38 @@ const Services = () => {
           </div>
 
           {/* Services Grid */}
-          <div className="space-y-12 sm:space-y-16 md:space-y-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {services.map((service, index) => (
-              <div
+              <Card 
                 key={index}
-                className={`grid md:grid-cols-2 gap-12 items-center animate-slide-up ${
-                  index % 2 === 1 ? "md:flex-row-reverse" : ""
-                }`}
+                className="group cursor-pointer hover-lift border animate-slide-up overflow-hidden"
+                style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className={index % 2 === 1 ? "md:order-2" : ""}>
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-[hsl(var(--gradient-pink))] to-[hsl(var(--gradient-blue))] text-white mb-6">
+                <CardContent className="p-6 sm:p-8 space-y-6">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-foreground text-background">
                     <service.icon size={32} />
                   </div>
-                  <h2 className="font-sans text-4xl font-bold mb-4">{service.title}</h2>
-                  <p className="text-muted-foreground text-lg mb-6">
-                    {service.description}
-                  </p>
-                  <ul className="space-y-3 mb-8">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start gap-3">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--gradient-pink))] mt-2"></div>
-                        <span className="text-muted-foreground">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="space-y-4">
+                    <h2 className="font-sans text-2xl sm:text-3xl font-bold">{service.title}</h2>
+                    <p className="text-muted-foreground">
+                      {service.description}
+                    </p>
+                    <ul className="space-y-2">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-start gap-3">
+                          <div className="w-1.5 h-1.5 rounded-full bg-foreground mt-2"></div>
+                          <span className="text-muted-foreground text-sm">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                   <NavLink to="/contact">
-                    <Button variant="premium">
+                    <Button variant="premium" className="w-full">
                       Get Started
                     </Button>
                   </NavLink>
-                </div>
-
-                <div className={index % 2 === 1 ? "md:order-1" : ""}>
-                  <div className="aspect-square rounded-3xl bg-gradient-to-br from-[hsl(var(--gradient-blue)/0.1)] to-[hsl(var(--gradient-pink)/0.1)] hover-lift"></div>
-                </div>
-              </div>
+                </CardContent>
+              </Card>
             ))}
           </div>
 
@@ -123,7 +121,7 @@ const Services = () => {
             <div className="grid md:grid-cols-4 gap-8">
               {["Discovery", "Strategy", "Execution", "Support"].map((step, index) => (
                 <div key={index} className="animate-scale-in">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[hsl(var(--gradient-pink))] to-[hsl(var(--gradient-blue))] text-white text-2xl font-bold flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 rounded-full bg-foreground text-background text-2xl font-bold flex items-center justify-center mx-auto mb-4">
                     {index + 1}
                   </div>
                   <h3 className="font-sans text-xl font-bold mb-2">{step}</h3>

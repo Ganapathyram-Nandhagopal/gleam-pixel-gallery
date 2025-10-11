@@ -59,10 +59,10 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Card 
               key={project.id}
-              className="group cursor-pointer hover-lift border-0 overflow-hidden"
+              className="group cursor-pointer hover-lift border-0 overflow-hidden animate-slide-up"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className={`h-64 bg-gradient-to-br ${project.color} transition-transform duration-500 group-hover:scale-105`} />
+              <div className={`h-64 bg-gradient-to-br ${project.color} transition-all duration-500 group-hover:scale-110`} />
               <CardContent className="p-6 space-y-2">
                 <p className="text-sm text-muted-foreground uppercase tracking-wider">
                   {project.category}

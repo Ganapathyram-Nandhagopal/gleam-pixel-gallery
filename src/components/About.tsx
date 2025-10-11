@@ -29,8 +29,6 @@ const About = () => {
           </div>
 
           <div className="space-y-6 animate-slide-up" style={{ animationDelay: "200ms" }}>
-            <div className="aspect-square bg-gradient-to-br from-pink-500 via-blue-500 to-green-500 rounded-3xl" />
-            
             <div className="space-y-4">
               <h3 className="text-xl font-semibold">Tools & Skills</h3>
               <div className="flex flex-wrap gap-2">
