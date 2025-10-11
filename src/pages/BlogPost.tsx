@@ -38,7 +38,7 @@ const BlogPost = () => {
           <div className="space-y-8 animate-fade-in">
             <div className="space-y-4">
               <Badge variant="secondary">Design Theory</Badge>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+              <h1 className="font-sans text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 The Art of Minimalist Design
               </h1>
               <div className="flex items-center gap-4 text-muted-foreground">
@@ -56,21 +56,21 @@ const BlogPost = () => {
                 between form and function, creating experiences that feel effortless and intuitive.
               </p>
 
-              <h2 className="text-3xl font-bold mt-12">The Philosophy Behind Minimalism</h2>
+              <h2 className="font-sans text-3xl font-bold mt-12">The Philosophy Behind Minimalism</h2>
               <p>
                 At its core, minimalist design is about intentionality. Every element on the screen should 
                 serve a purpose, whether functional or aesthetic. This approach forces designers to make 
                 deliberate choices about what to include and, more importantly, what to leave out.
               </p>
 
-              <h2 className="text-3xl font-bold mt-12">Less is More</h2>
+              <h2 className="font-sans text-3xl font-bold mt-12">Less is More</h2>
               <p>
                 This famous architectural principle applies perfectly to digital design. By reducing visual 
                 clutter and focusing on essential elements, we create interfaces that are easier to understand 
                 and more pleasant to use. White space becomes an active design element, not empty space to be filled.
               </p>
 
-              <h2 className="text-3xl font-bold mt-12">Key Principles</h2>
+              <h2 className="font-sans text-3xl font-bold mt-12">Key Principles</h2>
               <ul className="space-y-2 text-muted-foreground">
                 <li>Start with content and build the design around it</li>
                 <li>Use white space strategically to create visual hierarchy</li>
@@ -79,7 +79,7 @@ const BlogPost = () => {
                 <li>Remove decorative elements that don't add value</li>
               </ul>
 
-              <h2 className="text-3xl font-bold mt-12">Real-World Application</h2>
+              <h2 className="font-sans text-3xl font-bold mt-12">Real-World Application</h2>
               <p>
                 Companies like Apple have mastered minimalist design, creating products that feel premium and 
                 accessible. Their interfaces guide users naturally through tasks without overwhelming them with 
@@ -95,7 +95,7 @@ const BlogPost = () => {
           </div>
 
           <div className="mt-24 space-y-8">
-            <h3 className="text-2xl font-bold">Related Articles</h3>
+            <h3 className="font-sans text-2xl font-bold">Related Articles</h3>
             <div className="grid md:grid-cols-2 gap-6">
               {relatedPosts.map((post) => (
                 <Link key={post.id} to={`/blog/${post.id}`}>

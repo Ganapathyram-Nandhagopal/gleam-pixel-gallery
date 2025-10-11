@@ -63,7 +63,7 @@ const Blog = () => {
       <main className="flex-1 pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20 md:pb-24 px-4 sm:px-6 md:px-12 lg:px-24">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 sm:mb-16 space-y-4 animate-fade-in">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
+            <h1 className="font-sans text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
               Design <span className="gradient-text">Insights</span>
             </h1>
             <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">

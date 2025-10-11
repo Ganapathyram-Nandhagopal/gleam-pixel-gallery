@@ -31,7 +31,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-24">
           {/* Hero Section */}
           <div className="mb-12 sm:mb-16 md:mb-20 animate-fade-in">
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6">
+            <h1 className="font-sans text-4xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6">
               About <span className="gradient-text">Me</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl">
@@ -42,7 +42,7 @@ const About = () => {
           {/* Story Section */}
           <div className="grid md:grid-cols-2 gap-8 sm:gap-12 mb-12 sm:mb-16 md:mb-20">
             <div className="animate-slide-up">
-              <h2 className="font-serif text-3xl font-bold mb-6">My Story</h2>
+              <h2 className="font-sans text-3xl font-bold mb-6">My Story</h2>
               <p className="text-muted-foreground mb-4">
                 With over 5 years of experience in UI/UX design and development, I've had the privilege of working with diverse clients across various industries. My journey began with a passion for creating beautiful, functional interfaces and evolved into specializing in enterprise resource planning solutions.
               </p>
@@ -61,7 +61,7 @@ const About = () => {
 
           {/* Experience Section */}
           <div className="mb-20 animate-slide-up">
-            <h2 className="font-serif text-3xl font-bold mb-8">Experience</h2>
+            <h2 className="font-sans text-3xl font-bold mb-8">Experience</h2>
             <div className="space-y-6">
               {experience.map((item, index) => (
                 <div 
@@ -78,7 +78,7 @@ const About = () => {
 
           {/* Skills Section */}
           <div className="mb-20 animate-slide-up">
-            <h2 className="font-serif text-3xl font-bold mb-8">Skills & Expertise</h2>
+            <h2 className="font-sans text-3xl font-bold mb-8">Skills & Expertise</h2>
             <div className="flex flex-wrap gap-3">
               {skills.map((skill, index) => (
                 <span
@@ -93,7 +93,7 @@ const About = () => {
 
           {/* CTA Section */}
           <div className="text-center py-16 bg-secondary/50 rounded-3xl animate-fade-in">
-            <h2 className="font-serif text-4xl font-bold mb-6">
+            <h2 className="font-sans text-4xl font-bold mb-6">
               Let's Work <span className="gradient-text">Together</span>
             </h2>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">

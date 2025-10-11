@@ -64,7 +64,7 @@ const Services = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-24">
           {/* Hero Section */}
           <div className="text-center mb-12 sm:mb-16 md:mb-20 animate-fade-in">
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6">
+            <h1 className="font-sans text-4xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6">
               Our <span className="gradient-text">Services</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
@@ -85,7 +85,7 @@ const Services = () => {
                   <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-[hsl(var(--gradient-pink))] to-[hsl(var(--gradient-blue))] text-white mb-6">
                     <service.icon size={32} />
                   </div>
-                  <h2 className="font-serif text-4xl font-bold mb-4">{service.title}</h2>
+                  <h2 className="font-sans text-4xl font-bold mb-4">{service.title}</h2>
                   <p className="text-muted-foreground text-lg mb-6">
                     {service.description}
                   </p>
@@ -113,7 +113,7 @@ const Services = () => {
 
           {/* Process Section */}
           <div className="mt-32 text-center">
-            <h2 className="font-serif text-4xl font-bold mb-6">
+            <h2 className="font-sans text-4xl font-bold mb-6">
               Our <span className="gradient-text">Process</span>
             </h2>
             <p className="text-muted-foreground text-lg mb-12 max-w-2xl mx-auto">
@@ -126,7 +126,7 @@ const Services = () => {
                   <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[hsl(var(--gradient-pink))] to-[hsl(var(--gradient-blue))] text-white text-2xl font-bold flex items-center justify-center mx-auto mb-4">
                     {index + 1}
                   </div>
-                  <h3 className="font-serif text-xl font-bold mb-2">{step}</h3>
+                  <h3 className="font-sans text-xl font-bold mb-2">{step}</h3>
                   <p className="text-muted-foreground text-sm">
                     {index === 0 && "Understanding your needs and goals"}
                     {index === 1 && "Planning the perfect solution"}
@@ -140,7 +140,7 @@ const Services = () => {
 
           {/* CTA Section */}
           <div className="mt-32 text-center py-16 bg-secondary/50 rounded-3xl animate-fade-in">
-            <h2 className="font-serif text-4xl font-bold mb-6">
+            <h2 className="font-sans text-4xl font-bold mb-6">
               Ready to Get <span className="gradient-text">Started?</span>
             </h2>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">

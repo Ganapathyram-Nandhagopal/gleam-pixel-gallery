@@ -42,7 +42,7 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-24">
           {/* Hero Section */}
           <div className="text-center mb-12 sm:mb-16 md:mb-20 animate-fade-in">
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6">
+            <h1 className="font-sans text-4xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6">
               Let's <span className="gradient-text">Connect</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
@@ -55,7 +55,7 @@ const Contact = () => {
             {/* Contact Form */}
             <div className="lg:col-span-3 animate-slide-up">
               <div className="bg-card border rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12">
-                <h2 className="font-serif text-2xl sm:text-3xl font-bold mb-6">Send a Message</h2>
+                <h2 className="font-sans text-2xl sm:text-3xl font-bold mb-6">Send a Message</h2>
                 <form className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
@@ -99,7 +99,7 @@ const Contact = () => {
             {/* Contact Info */}
             <div className="lg:col-span-2 space-y-8 animate-slide-up">
               <div>
-                <h3 className="font-serif text-2xl font-bold mb-6">Get in Touch</h3>
+                <h3 className="font-sans text-2xl font-bold mb-6">Get in Touch</h3>
                 <div className="space-y-6">
                   {contactInfo.map((item, index) => (
                     <div key={index} className="flex items-start gap-4">
@@ -125,7 +125,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <h3 className="font-serif text-2xl font-bold mb-6">Follow Me</h3>
+                <h3 className="font-sans text-2xl font-bold mb-6">Follow Me</h3>
                 <div className="flex gap-4">
                   {socialLinks.map((social, index) => (
                     <a

@@ -63,7 +63,7 @@ const Clients = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-24">
           {/* Hero Section */}
           <div className="text-center mb-12 sm:mb-16 md:mb-20 animate-fade-in">
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6">
+            <h1 className="font-sans text-4xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6">
               Trusted by <span className="gradient-text">Industry Leaders</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
@@ -80,7 +80,7 @@ const Clients = () => {
               { number: "98%", label: "Client Satisfaction" },
             ].map((stat, index) => (
               <div key={index} className="text-center animate-scale-in">
-                <div className="font-serif text-5xl font-bold gradient-text mb-2">
+                <div className="font-sans text-5xl font-bold gradient-text mb-2">
                   {stat.number}
                 </div>
                 <p className="text-muted-foreground">{stat.label}</p>
@@ -90,7 +90,7 @@ const Clients = () => {
 
           {/* Client Logos Grid */}
           <div className="mb-20">
-            <h2 className="font-serif text-3xl font-bold text-center mb-12">
+            <h2 className="font-sans text-3xl font-bold text-center mb-12">
               Featured <span className="gradient-text">Clients</span>
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -109,7 +109,7 @@ const Clients = () => {
 
           {/* Testimonials Section */}
           <div>
-            <h2 className="font-serif text-3xl font-bold text-center mb-12">
+            <h2 className="font-sans text-3xl font-bold text-center mb-12">
               What Our <span className="gradient-text">Clients Say</span>
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -140,7 +140,7 @@ const Clients = () => {
 
           {/* CTA Section */}
           <div className="mt-32 text-center py-16 bg-secondary/50 rounded-3xl animate-fade-in">
-            <h2 className="font-serif text-4xl font-bold mb-6">
+            <h2 className="font-sans text-4xl font-bold mb-6">
               Join Our <span className="gradient-text">Success Stories</span>
             </h2>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
