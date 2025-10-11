@@ -88,56 +88,6 @@ const Clients = () => {
             ))}
           </div>
 
-          {/* Client Logos Grid */}
-          <div className="mb-20">
-            <h2 className="font-sans text-3xl font-bold text-center mb-12">
-              Featured <span className="gradient-text">Clients</span>
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {clients.map((client, index) => (
-                <div
-                  key={index}
-                  className="aspect-video rounded-2xl border bg-card flex flex-col items-center justify-center p-6 hover-lift"
-                >
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[hsl(var(--gradient-pink))] to-[hsl(var(--gradient-blue))] mb-3"></div>
-                  <h3 className="font-semibold text-center mb-1">{client.name}</h3>
-                  <p className="text-xs text-muted-foreground">{client.industry}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Testimonials Section */}
-          <div>
-            <h2 className="font-sans text-3xl font-bold text-center mb-12">
-              What Our <span className="gradient-text">Clients Say</span>
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {testimonials.map((testimonial, index) => (
-                <div
-                  key={index}
-                  className="bg-card border rounded-2xl p-8 hover-lift animate-slide-up"
-                >
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} size={18} className="fill-[hsl(var(--gradient-yellow))] text-[hsl(var(--gradient-yellow))]" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground mb-6 italic">
-                    "{testimonial.content}"
-                  </p>
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[hsl(var(--gradient-pink))] to-[hsl(var(--gradient-blue))]"></div>
-                    <div>
-                      <h4 className="font-semibold">{testimonial.name}</h4>
-                      <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
           {/* CTA Section */}
           <div className="mt-32 text-center py-16 bg-secondary/50 rounded-3xl animate-fade-in">
             <h2 className="font-sans text-4xl font-bold mb-6">

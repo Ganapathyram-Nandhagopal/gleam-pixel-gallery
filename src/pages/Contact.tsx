@@ -10,20 +10,20 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "hello@designer.com",
-      link: "mailto:hello@designer.com",
+      value: "ganapathyram.n@gmail.com",
+      link: "mailto:ganapathyram.n@gmail.com",
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567",
+      value: "+91 6383236424",
+      link: "tel:+916383236424",
     },
     {
       icon: MessageCircle,
       title: "WhatsApp",
-      value: "+1 (555) 123-4567",
-      link: "https://wa.me/15551234567",
+      value: "+91 6383236424",
+      link: "https://wa.me/916383236424",
     },
   ];
 
@@ -103,7 +103,7 @@ const Contact = () => {
                 <div className="space-y-6">
                   {contactInfo.map((item, index) => (
                     <div key={index} className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[hsl(var(--gradient-pink))] to-[hsl(var(--gradient-blue))] flex items-center justify-center text-white flex-shrink-0">
+                      <div className="w-12 h-12 rounded-xl bg-foreground flex items-center justify-center text-background flex-shrink-0">
                         <item.icon size={20} />
                       </div>
                       <div>
@@ -111,7 +111,7 @@ const Contact = () => {
                         {item.link ? (
                           <a 
                             href={item.link}
-                            className="font-medium hover:text-[hsl(var(--gradient-pink))] transition-colors"
+                            className="font-medium hover:text-primary transition-colors"
                           >
                             {item.value}
                           </a>
@@ -154,10 +154,23 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Map Section */}
+          {/* Calendar Booking Section */}
           <div className="animate-fade-in">
-            <div className="aspect-[21/9] rounded-3xl bg-gradient-to-br from-[hsl(var(--gradient-blue)/0.1)] to-[hsl(var(--gradient-pink)/0.1)] border flex items-center justify-center">
-              <p className="text-muted-foreground">Interactive Map Placeholder</p>
+            <div className="bg-card border rounded-3xl p-8 sm:p-12">
+              <h2 className="font-sans text-3xl font-bold mb-6 text-center">Book an Appointment</h2>
+              <p className="text-muted-foreground text-center mb-8">
+                Schedule a consultation to discuss your project
+              </p>
+              <div className="max-w-2xl mx-auto">
+                <iframe
+                  src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3o8R5tP9bKl3xK5xJ9eQ6kL8mN2pQ4rS6tU8vW0xY2zA3b?gv=true"
+                  style={{ border: 0 }}
+                  width="100%"
+                  height="600"
+                  frameBorder="0"
+                  className="rounded-2xl"
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>
