@@ -5,9 +5,9 @@ import { NavLink } from "react-router-dom";
 
 const About = () => {
   const experience = [
-    { year: "2020-Present", title: "Senior UI/UX Designer", company: "Design Studio" },
-    { year: "2018-2020", title: "UI/UX Designer", company: "Tech Company" },
-    { year: "2016-2018", title: "Junior Designer", company: "Creative Agency" },
+    { year: "2024-Present", title: "Founder", company: "Bude Global Enterprise" },
+    { year: "2023-2024", title: "ERP Functional Consultant", company: "Frutter Software Labs" },
+    { year: "2021-2023", title: "Freelancer", company: "Business Branding & Designing" },
   ];
 
   const skills = [
@@ -40,22 +40,21 @@ const About = () => {
           </div>
 
           {/* Story Section */}
-          <div className="grid md:grid-cols-2 gap-8 sm:gap-12 mb-12 sm:mb-16 md:mb-20">
+          <div className="mb-12 sm:mb-16 md:mb-20">
             <div className="animate-slide-up">
               <h2 className="font-sans text-3xl font-bold mb-6">My Story</h2>
               <p className="text-muted-foreground mb-4">
-                With over 5 years of experience in UI/UX design and development, I've had the privilege of working with diverse clients across various industries. My journey began with a passion for creating beautiful, functional interfaces and evolved into specializing in enterprise resource planning solutions.
+                I graduated with a degree in Commerce, specializing in Computer Applications 🎓. This laid the foundation for my journey into the world of ERP solutions. I initially kick-started my career as an ERPNext Implementation Consultant 🛠️, where I gained invaluable experience and insight into the ERP landscape.
               </p>
               <p className="text-muted-foreground mb-4">
-                I believe that great design isn't just about aesthetics—it's about solving real business problems. That's why I've dedicated myself to mastering both the creative and technical aspects of digital product development.
+                With comprehensive knowledge and hands-on experience in ERPNext Implementation, Business Development 📈, Project Management 📊, and Consulting 💡, I have the skill set to deliver high-quality ERP solutions tailored to meet the unique needs of each client.
               </p>
               <p className="text-muted-foreground">
-                Today, I help businesses transform their operations through custom ERP implementations, strategic consulting, and cutting-edge web applications.
+                At present, my role is laser-focused on spearheading business development initiatives 🚀. I am keenly concentrated on the Manufacturing 🏭, Service 📞, and Healthcare 🏥 sectors, where I aim to implement ERP solutions that streamline operations, enhance productivity, and drive business growth.
               </p>
-            </div>
-
-            <div className="animate-slide-up">
-              <div className="bg-gradient-to-br from-[hsl(var(--gradient-pink))] to-[hsl(var(--gradient-blue))] rounded-2xl aspect-square"></div>
+              <p className="text-muted-foreground mt-4">
+                My multidisciplinary expertise ensures that I can offer end-to-end solutions, right from project inception to successful implementation 🌐.
+              </p>
             </div>
           </div>
 

@@ -6,7 +6,7 @@ const Hero = () => {
     <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-12 lg:px-24 pt-20">
       <div className="max-w-5xl w-full text-center space-y-6 sm:space-y-8 animate-fade-in">
         <div className="space-y-2">
-          <p className="text-lg sm:text-xl text-muted-foreground">Ganapathyram</p>
+          <p className="text-lg sm:text-xl text-muted-foreground">#GR</p>
           <h1 className="font-sans text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-tight">
             Designing{" "}
             <span className="gradient-text">Premium</span>

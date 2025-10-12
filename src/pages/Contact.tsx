@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, Linkedin, Twitter, Github, MessageCircle, BookOpen } from "lucide-react";
+import { Mail, Phone, Linkedin, Instagram, MessageCircle, BookOpen } from "lucide-react";
 
 const Contact = () => {
   const contactInfo = [
@@ -28,10 +28,10 @@ const Contact = () => {
   ];
 
   const socialLinks = [
-    { icon: Linkedin, link: "#", label: "LinkedIn" },
-    { icon: Twitter, link: "#", label: "Twitter" },
-    { icon: Github, link: "#", label: "GitHub" },
-    { icon: BookOpen, link: "/blog", label: "Blog" },
+    { icon: Linkedin, link: "https://www.linkedin.com/in/ganapathyramnandhagopal/", label: "LinkedIn" },
+    { icon: Instagram, link: "https://www.instagram.com/kavin.117/", label: "Instagram" },
+    { icon: Mail, link: "mailto:ganapathyram.n@gmail.com", label: "Email" },
+    { icon: Phone, link: "tel:+916383236424", label: "Phone" },
   ];
 
   return (
@@ -56,19 +56,19 @@ const Contact = () => {
             <div className="lg:col-span-3 animate-slide-up">
               <div className="bg-card border rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12">
                 <h2 className="font-sans text-2xl sm:text-3xl font-bold mb-6">Send a Message</h2>
-                <form className="space-y-6">
+                <form className="space-y-6" action="mailto:ganapathyram.n@gmail.com" method="post" encType="text/plain">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label className="text-sm font-medium mb-2 block">
                         Name
                       </label>
-                      <Input placeholder="Your name" className="h-12" />
+                      <Input name="name" placeholder="Your name" className="h-12" required />
                     </div>
                     <div>
                       <label className="text-sm font-medium mb-2 block">
                         Email
                       </label>
-                      <Input type="email" placeholder="your@email.com" className="h-12" />
+                      <Input name="email" type="email" placeholder="your@email.com" className="h-12" required />
                     </div>
                   </div>
                   
@@ -76,7 +76,7 @@ const Contact = () => {
                     <label className="text-sm font-medium mb-2 block">
                       Subject
                     </label>
-                    <Input placeholder="What's this about?" className="h-12" />
+                    <Input name="subject" placeholder="What's this about?" className="h-12" required />
                   </div>
 
                   <div>
@@ -84,12 +84,14 @@ const Contact = () => {
                       Message
                     </label>
                     <Textarea 
+                      name="message"
                       placeholder="Tell me about your project..." 
                       className="min-h-[200px] resize-none"
+                      required
                     />
                   </div>
 
-                  <Button variant="premium" size="lg" className="w-full">
+                  <Button type="submit" variant="premium" size="lg" className="w-full">
                     Send Message
                   </Button>
                 </form>
@@ -163,7 +165,7 @@ const Contact = () => {
               </p>
               <div className="max-w-2xl mx-auto">
                 <iframe
-                  src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3o8R5tP9bKl3xK5xJ9eQ6kL8mN2pQ4rS6tU8vW0xY2zA3b?gv=true"
+                  src="https://calendar.app.google/V2AFabeHcksNZAL48"
                   style={{ border: 0 }}
                   width="100%"
                   height="600"
