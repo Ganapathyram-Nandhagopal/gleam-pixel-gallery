@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Insights & Blog - Ganapathyram</title>
+    <meta name="description" content="Thoughts, ideas, and lessons learned from years of crafting digital experiences. Read about design theory, UX, accessibility, and technology." />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="index-static.html" class="logo gradient-text">Designer</a>
+            
+            <div class="nav-links desktop-nav">
+                <a href="index-static.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="clients.html" class="nav-link">Clients</a>
+                <a href="blog.html" class="nav-link active">Blog</a>
+                <a href="contact.html" class="btn btn-premium btn-sm">Contact</a>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        
+        <div class="mobile-nav" id="mobileNav">
+            <a href="index-static.html" class="nav-link-mobile">Home</a>
+            <a href="about.html" class="nav-link-mobile">About</a>
+            <a href="services.html" class="nav-link-mobile">Services</a>
+            <a href="clients.html" class="nav-link-mobile">Clients</a>
+            <a href="blog.html" class="nav-link-mobile">Blog</a>
+            <a href="contact.html" class="btn btn-premium btn-sm" style="width: 100%; margin-top: 1rem;">Contact</a>
+        </div>
+    </nav>
+
+    <main class="page-content">
+        <div class="container-wide">
+            <!-- Hero Section -->
+            <div class="section-header animate-fade-in">
+                <h1 class="section-title-large">
+                    Design <span class="gradient-text">Insights</span>
+                </h1>
+                <p class="section-description">
+                    Thoughts, ideas, and lessons learned from years of crafting digital experiences
+                </p>
+            </div>
+
+            <!-- Blog Grid -->
+            <div class="blog-grid">
+                <article class="blog-card hover-lift" style="animation-delay: 0ms;">
+                    <div class="blog-image gradient-pink-blue-green"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Design Theory</span>
+                            <span class="blog-read-time">5 min read</span>
+                        </div>
+                        <h3 class="blog-title">The Art of Minimalist Design</h3>
+                        <p class="blog-excerpt">Exploring how less is more in creating impactful digital experiences that resonate with users.</p>
+                        <p class="blog-date">Mar 15, 2025</p>
+                    </div>
+                </article>
+
+                <article class="blog-card hover-lift" style="animation-delay: 100ms;">
+                    <div class="blog-image gradient-pink-blue-green"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Design Systems</span>
+                            <span class="blog-read-time">8 min read</span>
+                        </div>
+                        <h3 class="blog-title">Building Design Systems That Scale</h3>
+                        <p class="blog-excerpt">A comprehensive guide to creating consistent, maintainable design systems for growing products.</p>
+                        <p class="blog-date">Mar 10, 2025</p>
+                    </div>
+                </article>
+
+                <article class="blog-card hover-lift" style="animation-delay: 200ms;">
+                    <div class="blog-image gradient-pink-blue-green"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">UI Design</span>
+                            <span class="blog-read-time">6 min read</span>
+                        </div>
+                        <h3 class="blog-title">Color Psychology in UI Design</h3>
+                        <p class="blog-excerpt">Understanding how colors influence user behavior and emotional responses in digital interfaces.</p>
+                        <p class="blog-date">Mar 5, 2025</p>
+                    </div>
+                </article>
+
+                <article class="blog-card hover-lift" style="animation-delay: 300ms;">
+                    <div class="blog-image gradient-pink-blue-green"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">UX Design</span>
+                            <span class="blog-read-time">4 min read</span>
+                        </div>
+                        <h3 class="blog-title">Microinteractions That Delight</h3>
+                        <p class="blog-excerpt">Small details that make a big difference in user experience and product satisfaction.</p>
+                        <p class="blog-date">Feb 28, 2025</p>
+                    </div>
+                </article>
+
+                <article class="blog-card hover-lift" style="animation-delay: 400ms;">
+                    <div class="blog-image gradient-pink-blue-green"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Accessibility</span>
+                            <span class="blog-read-time">7 min read</span>
+                        </div>
+                        <h3 class="blog-title">Designing for Accessibility</h3>
+                        <p class="blog-excerpt">Creating inclusive digital experiences that work for everyone, regardless of ability.</p>
+                        <p class="blog-date">Feb 20, 2025</p>
+                    </div>
+                </article>
+
+                <article class="blog-card hover-lift" style="animation-delay: 500ms;">
+                    <div class="blog-image gradient-pink-blue-green"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Technology</span>
+                            <span class="blog-read-time">10 min read</span>
+                        </div>
+                        <h3 class="blog-title">The Future of AI in Design</h3>
+                        <p class="blog-excerpt">How artificial intelligence is transforming the design process and what it means for creators.</p>
+                        <p class="blog-date">Feb 15, 2025</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p class="footer-text">© 2025 Ganapathyram. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#" class="footer-link">Privacy</a>
+                <a href="#" class="footer-link">Terms</a>
+                <a href="contact.html" class="footer-link">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

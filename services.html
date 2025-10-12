@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - ERP Implementation & Web Development</title>
+    <meta name="description" content="Comprehensive ERP implementation, business consulting, custom development, and web/app development services. Specializing in ERPNext, Odoo, and Frappe Framework." />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="index-static.html" class="logo gradient-text">Designer</a>
+            
+            <div class="nav-links desktop-nav">
+                <a href="index-static.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link active">Services</a>
+                <a href="clients.html" class="nav-link">Clients</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="btn btn-premium btn-sm">Contact</a>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        
+        <div class="mobile-nav" id="mobileNav">
+            <a href="index-static.html" class="nav-link-mobile">Home</a>
+            <a href="about.html" class="nav-link-mobile">About</a>
+            <a href="services.html" class="nav-link-mobile">Services</a>
+            <a href="clients.html" class="nav-link-mobile">Clients</a>
+            <a href="blog.html" class="nav-link-mobile">Blog</a>
+            <a href="contact.html" class="btn btn-premium btn-sm" style="width: 100%; margin-top: 1rem;">Contact</a>
+        </div>
+    </nav>
+
+    <main class="page-content">
+        <div class="container">
+            <!-- Hero Section -->
+            <div class="page-hero animate-fade-in">
+                <h1 class="page-title">
+                    Our <span class="gradient-text">Services</span>
+                </h1>
+                <p class="page-subtitle">
+                    Comprehensive solutions for modern businesses—from ERP implementation to custom web development.
+                </p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="services-grid">
+                <div class="service-card hover-lift animate-slide-up" style="animation-delay: 0ms;">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M12 1v6m0 6v6m9-9h-6m-6 0H3"></path>
+                        </svg>
+                    </div>
+                    <h2 class="service-title">ERP Implementation</h2>
+                    <p class="service-description">
+                        Expert implementation of ERPNext and Odoo tailored to your business needs. Streamline your operations with powerful, open-source ERP solutions.
+                    </p>
+                    <ul class="service-features">
+                        <li>ERPNext Setup & Configuration</li>
+                        <li>Odoo Implementation</li>
+                        <li>Data Migration</li>
+                        <li>System Integration</li>
+                        <li>Training & Support</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-premium btn-full">Get Started</a>
+                </div>
+
+                <div class="service-card hover-lift animate-slide-up" style="animation-delay: 100ms;">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                        </svg>
+                    </div>
+                    <h2 class="service-title">Business Consulting</h2>
+                    <p class="service-description">
+                        Strategic consulting to optimize your business processes and leverage technology for maximum efficiency and growth.
+                    </p>
+                    <ul class="service-features">
+                        <li>Process Optimization</li>
+                        <li>Digital Transformation</li>
+                        <li>Technology Strategy</li>
+                        <li>Workflow Analysis</li>
+                        <li>Change Management</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-premium btn-full">Get Started</a>
+                </div>
+
+                <div class="service-card hover-lift animate-slide-up" style="animation-delay: 200ms;">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                    </div>
+                    <h2 class="service-title">ERP Development & Customization</h2>
+                    <p class="service-description">
+                        Custom ERP development and modifications using the powerful Frappe Framework to meet your unique business requirements.
+                    </p>
+                    <ul class="service-features">
+                        <li>Custom Module Development</li>
+                        <li>Frappe Framework Expertise</li>
+                        <li>API Integration</li>
+                        <li>Custom Reports & Dashboards</li>
+                        <li>Performance Optimization</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-premium btn-full">Get Started</a>
+                </div>
+
+                <div class="service-card hover-lift animate-slide-up" style="animation-delay: 300ms;">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <h2 class="service-title">Web/App Development</h2>
+                    <p class="service-description">
+                        Modern, responsive web and mobile applications built with cutting-edge technologies for exceptional user experiences.
+                    </p>
+                    <ul class="service-features">
+                        <li>React & TypeScript</li>
+                        <li>Progressive Web Apps</li>
+                        <li>Mobile-First Design</li>
+                        <li>API Development</li>
+                        <li>UI/UX Design</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-premium btn-full">Get Started</a>
+                </div>
+            </div>
+
+            <!-- Process Section -->
+            <div class="process-section">
+                <h2 class="section-title-centered">
+                    Our <span class="gradient-text">Process</span>
+                </h2>
+                <p class="section-description-centered">
+                    A proven approach to delivering exceptional results
+                </p>
+                
+                <div class="process-grid">
+                    <div class="process-step animate-scale-in">
+                        <div class="process-number">1</div>
+                        <h3 class="process-title">Discovery</h3>
+                        <p class="process-text">Understanding your needs and goals</p>
+                    </div>
+                    <div class="process-step animate-scale-in">
+                        <div class="process-number">2</div>
+                        <h3 class="process-title">Strategy</h3>
+                        <p class="process-text">Planning the perfect solution</p>
+                    </div>
+                    <div class="process-step animate-scale-in">
+                        <div class="process-number">3</div>
+                        <h3 class="process-title">Execution</h3>
+                        <p class="process-text">Bringing your vision to life</p>
+                    </div>
+                    <div class="process-step animate-scale-in">
+                        <div class="process-number">4</div>
+                        <h3 class="process-title">Support</h3>
+                        <p class="process-text">Ongoing maintenance and growth</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section animate-fade-in">
+                <h2 class="cta-title">
+                    Ready to Get <span class="gradient-text">Started?</span>
+                </h2>
+                <p class="cta-text">
+                    Let's discuss how we can help transform your business with the right technology solutions.
+                </p>
+                <a href="contact.html" class="btn btn-premium btn-lg">Contact Us Today</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p class="footer-text">© 2025 Ganapathyram. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#" class="footer-link">Privacy</a>
+                <a href="#" class="footer-link">Terms</a>
+                <a href="contact.html" class="footer-link">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
