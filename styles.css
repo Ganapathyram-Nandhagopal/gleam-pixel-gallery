@@ -525,32 +525,6 @@ body {
     border-radius: 1rem;
     overflow: hidden;
     box-shadow: 0 4px 14px rgba(0,0,0,0.1);
-    width: 100%;
-}
-
-.calendar-container iframe {
-    width: 100%;
-    min-height: 600px;
-    border: none;
-}
-
-/* Mobile responsive calendar */
-@media (max-width: 768px) {
-    .calendar-container {
-        margin-left: -1rem;
-        margin-right: -1rem;
-        border-radius: 0;
-    }
-    
-    .calendar-container iframe {
-        min-height: 700px;
-    }
-}
-
-@media (max-width: 480px) {
-    .calendar-container iframe {
-        min-height: 800px;
-    }
 }
 
 .contact-details {
