@@ -1,6 +1,6 @@
 # Welcome to My Portfolio
 
-This project is built with:
+This Portfolio is built with:
 
 - Vite
 - TypeScript
