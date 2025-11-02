@@ -62,21 +62,6 @@ const Contact = () => {
             </Button>
           </form>
         </div>
-
-        <div className="mt-16 animate-fade-in" style={{ animationDelay: "400ms" }}>
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-semibold mb-2">Schedule a Meeting</h3>
-            <p className="text-muted-foreground">Book a time that works for you</p>
-          </div>
-          <div className="w-full max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-lg border">
-            <iframe
-              src="https://calendar.app.google/V2AFabeHcksNZAL48"
-              style={{ border: 0, width: '100%', height: '600px' }}
-              title="Schedule a meeting"
-              frameBorder="0"
-            />
-          </div>
-        </div>
       </div>
     </section>
   );

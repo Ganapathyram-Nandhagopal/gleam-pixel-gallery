@@ -3,6 +3,12 @@ import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import blogMinimalist from "@/assets/blog-minimalist.jpg";
+import blogDesignSystems from "@/assets/blog-design-systems.jpg";
+import blogColorPsychology from "@/assets/blog-color-psychology.jpg";
+import blogMicrointeractions from "@/assets/blog-microinteractions.jpg";
+import blogAccessibility from "@/assets/blog-accessibility.jpg";
+import blogAiDesign from "@/assets/blog-ai-design.jpg";
 
 const blogPosts = [
   {
@@ -12,6 +18,7 @@ const blogPosts = [
     category: "Design Theory",
     date: "Mar 15, 2025",
     readTime: "5 min read",
+    image: blogMinimalist,
   },
   {
     id: 2,
@@ -20,6 +27,7 @@ const blogPosts = [
     category: "Design Systems",
     date: "Mar 10, 2025",
     readTime: "8 min read",
+    image: blogDesignSystems,
   },
   {
     id: 3,
@@ -28,6 +36,7 @@ const blogPosts = [
     category: "UI Design",
     date: "Mar 5, 2025",
     readTime: "6 min read",
+    image: blogColorPsychology,
   },
   {
     id: 4,
@@ -36,6 +45,7 @@ const blogPosts = [
     category: "UX Design",
     date: "Feb 28, 2025",
     readTime: "4 min read",
+    image: blogMicrointeractions,
   },
   {
     id: 5,
@@ -44,6 +54,7 @@ const blogPosts = [
     category: "Accessibility",
     date: "Feb 20, 2025",
     readTime: "7 min read",
+    image: blogAccessibility,
   },
   {
     id: 6,
@@ -52,6 +63,7 @@ const blogPosts = [
     category: "Technology",
     date: "Feb 15, 2025",
     readTime: "10 min read",
+    image: blogAiDesign,
   },
 ];
 
@@ -78,7 +90,13 @@ const Blog = () => {
                   className="group cursor-pointer hover-lift h-full border-0"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <div className="h-48 bg-gradient-to-br from-pink-500 via-blue-500 to-green-500 transition-transform duration-500 group-hover:scale-105" />
+                  <div className="relative h-48 overflow-hidden">
+                    <img 
+                      src={post.image} 
+                      alt={post.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
                   <CardContent className="p-6 space-y-4">
                     <div className="flex items-center justify-between">
                       <Badge variant="secondary">{post.category}</Badge>

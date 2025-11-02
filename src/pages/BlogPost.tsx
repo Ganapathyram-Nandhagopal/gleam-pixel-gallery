@@ -5,6 +5,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import blogMinimalist from "@/assets/blog-minimalist.jpg";
+import blogDesignSystems from "@/assets/blog-design-systems.jpg";
+import blogColorPsychology from "@/assets/blog-color-psychology.jpg";
 
 const BlogPost = () => {
   const { id } = useParams();
@@ -14,11 +17,13 @@ const BlogPost = () => {
       id: 2,
       title: "Building Design Systems That Scale",
       category: "Design Systems",
+      image: blogDesignSystems,
     },
     {
       id: 3,
       title: "Color Psychology in UI Design",
       category: "UI Design",
+      image: blogColorPsychology,
     },
   ];
 
@@ -48,7 +53,13 @@ const BlogPost = () => {
               </div>
             </div>
 
-            <div className="h-96 bg-gradient-to-br from-pink-500 via-blue-500 to-green-500 rounded-3xl" />
+            <div className="relative h-96 rounded-3xl overflow-hidden">
+              <img 
+                src={blogMinimalist} 
+                alt="The Art of Minimalist Design"
+                className="w-full h-full object-cover"
+              />
+            </div>
 
             <div className="prose prose-lg max-w-none space-y-6 text-foreground">
               <p className="text-xl leading-relaxed text-muted-foreground">
@@ -100,7 +111,13 @@ const BlogPost = () => {
               {relatedPosts.map((post) => (
                 <Link key={post.id} to={`/blog/${post.id}`}>
                   <Card className="group cursor-pointer hover-lift border-0">
-                    <div className="h-32 bg-gradient-to-br from-blue-500 to-purple-500" />
+                    <div className="relative h-32 overflow-hidden">
+                      <img 
+                        src={post.image} 
+                        alt={post.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                     <CardContent className="p-6 space-y-2">
                       <Badge variant="secondary">{post.category}</Badge>
                       <h4 className="text-lg font-semibold group-hover:gradient-text transition-all">
