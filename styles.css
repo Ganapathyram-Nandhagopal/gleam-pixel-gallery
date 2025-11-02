@@ -193,6 +193,8 @@ body {
 .project-image {
     height: 16rem;
     transition: transform 0.5s;
+    object-fit: cover;
+    width: 100%;
 }
 
 .project-card:hover .project-image {
@@ -520,11 +522,38 @@ body {
     color: var(--foreground);
 }
 
+.calendar-section {
+    margin-top: 5rem;
+    padding-top: 3rem;
+}
+
 .calendar-container {
     margin-top: 2rem;
     border-radius: 1rem;
     overflow: hidden;
     box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    position: relative;
+    width: 100%;
+}
+
+.calendar-container iframe {
+    width: 100%;
+    min-height: 600px;
+    border: none;
+}
+
+/* Mobile responsive calendar */
+@media (max-width: 767px) {
+    .calendar-container iframe {
+        min-height: 800px;
+        height: auto;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .calendar-container iframe {
+        min-height: 700px;
+    }
 }
 
 .contact-details {
