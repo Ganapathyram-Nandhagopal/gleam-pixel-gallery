@@ -16,14 +16,21 @@ const About = () => {
             </h2>
             <div className="space-y-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
               <p>
-                I'm a UI/UX designer passionate about creating digital experiences 
-                that are both beautiful and functional. With over 8 years of experience, 
-                I've helped startups and Fortune 500 companies bring their visions to life.
+                With over 8 years of experience in UI/UX design, I've partnered with startups 
+                and Fortune 500 companies to transform their digital visions into reality. 
+                My approach combines aesthetic excellence with strategic thinking to deliver 
+                products that users love and businesses trust.
               </p>
               <p>
-                My design philosophy centers around simplicity, clarity, and delight. 
-                I believe great design should be invisible—users shouldn't have to think, 
-                they should just enjoy using the product.
+                I believe the best design is invisible—it guides users naturally without friction, 
+                creating delightful experiences that feel effortless. Every pixel, interaction, 
+                and animation is crafted with purpose, ensuring beauty and functionality work in 
+                perfect harmony.
+              </p>
+              <p>
+                Whether it's reimagining complex workflows or designing from scratch, I bring 
+                curiosity, empathy, and precision to every project. Let's create something 
+                exceptional together.
               </p>
             </div>
           </div>

@@ -27,17 +27,25 @@ const Contact = () => {
             </div>
 
             <div className="flex gap-4 pt-4">
-              <Button variant="outline" size="icon" className="rounded-full">
-                <Mail className="h-5 w-5" />
+              <Button variant="outline" size="icon" className="rounded-full" asChild>
+                <a href="mailto:your.email@example.com" aria-label="Email">
+                  <Mail className="h-5 w-5" />
+                </a>
               </Button>
-              <Button variant="outline" size="icon" className="rounded-full">
-                <Linkedin className="h-5 w-5" />
+              <Button variant="outline" size="icon" className="rounded-full" asChild>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <Linkedin className="h-5 w-5" />
+                </a>
               </Button>
-              <Button variant="outline" size="icon" className="rounded-full">
-                <Twitter className="h-5 w-5" />
+              <Button variant="outline" size="icon" className="rounded-full" asChild>
+                <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                  <Twitter className="h-5 w-5" />
+                </a>
               </Button>
-              <Button variant="outline" size="icon" className="rounded-full">
-                <Github className="h-5 w-5" />
+              <Button variant="outline" size="icon" className="rounded-full" asChild>
+                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="Github">
+                  <Github className="h-5 w-5" />
+                </a>
               </Button>
             </div>
           </div>
@@ -53,6 +61,21 @@ const Contact = () => {
               Send Message
             </Button>
           </form>
+        </div>
+
+        <div className="mt-16 animate-fade-in" style={{ animationDelay: "400ms" }}>
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-semibold mb-2">Schedule a Meeting</h3>
+            <p className="text-muted-foreground">Book a time that works for you</p>
+          </div>
+          <div className="w-full max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-lg border">
+            <iframe
+              src="https://calendar.app.google/V2AFabeHcksNZAL48"
+              style={{ border: 0, width: '100%', height: '600px' }}
+              title="Schedule a meeting"
+              frameBorder="0"
+            />
+          </div>
         </div>
       </div>
     </section>
