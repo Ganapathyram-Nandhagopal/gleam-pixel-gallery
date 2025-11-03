@@ -171,7 +171,7 @@ const Contact = () => {
                   height="600"
                   frameBorder="0"
                   scrolling="yes"
-                  className="w-full min-h-[500px] sm:min-h-[600px] md:min-h-[700px]"
+                  className="w-full min-h-[600px] md:min-h-[700px]"
                 ></iframe>
               </div>
             </div>
