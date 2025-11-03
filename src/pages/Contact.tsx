@@ -158,19 +158,19 @@ const Contact = () => {
 
           {/* Calendar Booking Section */}
           <div className="animate-fade-in">
-            <div className="bg-card border rounded-3xl p-8 sm:p-12">
-              <h2 className="font-sans text-3xl font-bold mb-6 text-center">Book an Appointment</h2>
-              <p className="text-muted-foreground text-center mb-8">
+            <div className="bg-card border rounded-3xl p-6 sm:p-8 md:p-12">
+              <h2 className="font-sans text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-center">Book an Appointment</h2>
+              <p className="text-sm sm:text-base text-muted-foreground text-center mb-6 sm:mb-8 px-4">
                 Schedule a consultation to discuss your project
               </p>
-              <div className="max-w-2xl mx-auto">
+              <div className="w-full mx-auto">
                 <iframe
-                  src="https://calendar.app.google/V2AFabeHcksNZAL48"
+                  src="https://calendar.app.google/CfE1QiH8u55JSLQK6"
                   style={{ border: 0 }}
                   width="100%"
                   height="600"
                   frameBorder="0"
-                  className="rounded-2xl"
+                  className="rounded-xl sm:rounded-2xl w-full min-h-[500px] sm:min-h-[600px]"
                 ></iframe>
               </div>
             </div>
