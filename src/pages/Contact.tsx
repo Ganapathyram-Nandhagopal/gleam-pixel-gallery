@@ -163,18 +163,16 @@ const Contact = () => {
               <p className="text-sm sm:text-base text-muted-foreground text-center mb-6 sm:mb-8 px-4">
                 Schedule a consultation to discuss your project
               </p>
-              <div className="w-full mx-auto overflow-x-auto rounded-xl sm:rounded-2xl border shadow-lg">
-                <div className="min-w-[640px]">
-                  <iframe
-                    src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ16-lrn9WUNXCyRbFkCelSzD-4953UiRIX-cf0NZx_AbIop0Tc8hLzdZZweAdvjyXm37fvHBcM3?gv=true"
-                    style={{ border: 0, display: 'block' }}
-                    width="100%"
-                    height="600"
-                    frameBorder="0"
-                    scrolling="yes"
-                    className="w-full min-h-[600px] md:min-h-[700px]"
-                  ></iframe>
-                </div>
+              <div className="w-full mx-auto overflow-hidden rounded-xl sm:rounded-2xl border shadow-lg">
+                <iframe
+                  src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ16-lrn9WUNXCyRbFkCelSzD-4953UiRIX-cf0NZx_AbIop0Tc8hLzdZZweAdvjyXm37fvHBcM3?gv=true"
+                  style={{ border: 0, display: 'block' }}
+                  width="100%"
+                  height="600"
+                  frameBorder="0"
+                  scrolling="yes"
+                  className="w-full min-h-[600px] md:min-h-[700px]"
+                ></iframe>
               </div>
             </div>
           </div>
