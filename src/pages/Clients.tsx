@@ -95,23 +95,23 @@ const Clients = () => {
             <h2 className="font-sans text-3xl font-bold text-center mb-12">
               Our <span className="gradient-text">Valued Clients</span>
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
-              {clients.map((client, index) => (
-                <div key={index} className="flex flex-col items-center justify-center p-6 bg-card rounded-xl border border-border hover:border-primary/50 transition-all animate-scale-in">
-                  {client.logo ? (
-                    <img 
-                      src={client.logo} 
-                      alt={`${client.name} logo`}
-                      className="w-full h-24 object-contain mb-4"
-                    />
-                  ) : (
-                    <div className="w-full h-24 flex items-center justify-center mb-4">
-                      <span className="text-2xl font-bold text-muted-foreground">{client.name}</span>
-                    </div>
-                  )}
-                  <p className="text-sm text-muted-foreground text-center">{client.industry}</p>
-                </div>
-              ))}
+            <div className="flex justify-center items-center gap-8 md:gap-12">
+              <div className="flex flex-col items-center justify-center p-6 bg-card rounded-xl border border-border hover:border-primary/50 transition-all animate-scale-in">
+                <img 
+                  src={ad3InfotechLogo} 
+                  alt="AD3 Infotech logo"
+                  className="w-48 h-24 object-contain mb-4"
+                />
+                <p className="text-sm text-muted-foreground text-center">Technology</p>
+              </div>
+              <div className="flex flex-col items-center justify-center p-6 bg-card rounded-xl border border-border hover:border-primary/50 transition-all animate-scale-in">
+                <img 
+                  src={dropsChemicalsLogo} 
+                  alt="Drops Chemicals logo"
+                  className="w-48 h-24 object-contain mb-4"
+                />
+                <p className="text-sm text-muted-foreground text-center">Chemical Manufacturing</p>
+              </div>
             </div>
           </div>
 
