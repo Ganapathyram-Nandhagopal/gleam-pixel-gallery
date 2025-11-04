@@ -37,9 +37,12 @@ const Hero = () => {
             size="lg" 
             variant="premium"
             className="group"
+            asChild
           >
-            View My Work
-            <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            <a href="/services">
+              View My Services
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </a>
           </Button>
         </div>
       </div>

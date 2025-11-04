@@ -3,6 +3,8 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "react-router-dom";
 import { Star } from "lucide-react";
+import ad3InfotechLogo from "@/assets/client-ad3-infotech.jpg";
+import dropsChemicalsLogo from "@/assets/client-drops-chemicals.jpg";
 
 const Clients = () => {
   const testimonials = [
@@ -45,14 +47,14 @@ const Clients = () => {
   ];
 
   const clients = [
+    { name: "AD3 Infotech", industry: "Technology", logo: ad3InfotechLogo },
+    { name: "Drops Chemicals", industry: "Chemical Manufacturing", logo: dropsChemicalsLogo },
     { name: "TechCorp", industry: "Technology" },
     { name: "Global Logistics", industry: "Supply Chain" },
     { name: "StartUp Inc", industry: "E-commerce" },
     { name: "Manufacturing Co", industry: "Manufacturing" },
     { name: "Consulting Firm", industry: "Professional Services" },
     { name: "Retail Chain", industry: "Retail" },
-    { name: "Healthcare Plus", industry: "Healthcare" },
-    { name: "Finance Group", industry: "Finance" },
   ];
 
   return (
@@ -88,8 +90,33 @@ const Clients = () => {
             ))}
           </div>
 
+          {/* Client Logos Section */}
+          <div className="mb-20">
+            <h2 className="font-sans text-3xl font-bold text-center mb-12">
+              Our <span className="gradient-text">Valued Clients</span>
+            </h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+              {clients.map((client, index) => (
+                <div key={index} className="flex flex-col items-center justify-center p-6 bg-card rounded-xl border border-border hover:border-primary/50 transition-all animate-scale-in">
+                  {client.logo ? (
+                    <img 
+                      src={client.logo} 
+                      alt={`${client.name} logo`}
+                      className="w-full h-24 object-contain mb-4"
+                    />
+                  ) : (
+                    <div className="w-full h-24 flex items-center justify-center mb-4">
+                      <span className="text-2xl font-bold text-muted-foreground">{client.name}</span>
+                    </div>
+                  )}
+                  <p className="text-sm text-muted-foreground text-center">{client.industry}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* CTA Section */}
-          <div className="mt-32 text-center py-16 bg-secondary/50 rounded-3xl animate-fade-in">
+          <div className="mt-12 text-center py-16 bg-secondary/50 rounded-3xl animate-fade-in">
             <h2 className="font-sans text-4xl font-bold mb-6">
               Join Our <span className="gradient-text">Success Stories</span>
             </h2>
