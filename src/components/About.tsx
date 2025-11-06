@@ -1,8 +1,8 @@
 import { Badge } from "@/components/ui/badge";
 
 const skills = [
-  "Figma", "Sketch", "Adobe XD", "Principle", "After Effects",
-  "Framer", "Webflow", "React", "Tailwind CSS", "Typography"
+  "ERP Implementation", "Business Analyst", "ERPNext", "Odoo", 
+  "OFBiz", "Frappe Framework", "Figma", "React", "Tailwind CSS", "TypeScript"
 ];
 
 const About = () => {
