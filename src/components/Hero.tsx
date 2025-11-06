@@ -18,18 +18,6 @@ const Hero = () => {
         <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed px-4">
           A passionate designer and developer crafting premium digital experiences with a focus on ERP solutions and modern web applications.
         </p>
-        
-        <div className="max-w-3xl mx-auto space-y-4 text-base text-muted-foreground leading-relaxed px-4">
-          <p>
-            I graduated with a degree in Commerce, specializing in Computer Applications 🎓. This laid the foundation for my journey into the world of ERP solutions. I initially kick-started my career as an ERPNext Implementation Consultant 🛠️, where I gained invaluable experience and insight into the ERP landscape.
-          </p>
-          <p>
-            With comprehensive knowledge and hands-on experience in ERPNext Implementation, Business Development 📈, Project Management 📊, and Consulting 💡, I have the skill set to deliver high-quality ERP solutions tailored to meet the unique needs of each client.
-          </p>
-          <p>
-            At present, my role is laser-focused on spearheading business development initiatives 🚀. I am keenly concentrated on the Manufacturing 🏭, Service 📞, and Healthcare 🏥 sectors, where I aim to implement ERP solutions that streamline operations, enhance productivity, and drive business growth.
-          </p>
-        </div>
 
         <div className="flex justify-center gap-4 pt-2">
           <Button variant="outline" size="icon" className="rounded-full" asChild>
