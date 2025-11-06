@@ -16,21 +16,16 @@ const About = () => {
             </h2>
             <div className="space-y-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
               <p>
-                With over 8 years of experience in UI/UX design, I've partnered with startups 
-                and Fortune 500 companies to transform their digital visions into reality. 
-                My approach combines aesthetic excellence with strategic thinking to deliver 
-                products that users love and businesses trust.
+                I graduated with a degree in Commerce, specializing in Computer Applications 🎓. This laid the foundation for my journey into the world of ERP solutions. I initially kick-started my career as an ERPNext Implementation Consultant 🛠️, where I gained invaluable experience and insight into the ERP landscape.
               </p>
               <p>
-                I believe the best design is invisible—it guides users naturally without friction, 
-                creating delightful experiences that feel effortless. Every pixel, interaction, 
-                and animation is crafted with purpose, ensuring beauty and functionality work in 
-                perfect harmony.
+                With comprehensive knowledge and hands-on experience in ERPNext Implementation, Business Development 📈, Project Management 📊, and Consulting 💡, I have the skill set to deliver high-quality ERP solutions tailored to meet the unique needs of each client.
               </p>
               <p>
-                Whether it's reimagining complex workflows or designing from scratch, I bring 
-                curiosity, empathy, and precision to every project. Let's create something 
-                exceptional together.
+                At present, my role is laser-focused on spearheading business development initiatives 🚀. I am keenly concentrated on the Manufacturing 🏭, Service 📞, and Healthcare 🏥 sectors, where I aim to implement ERP solutions that streamline operations, enhance productivity, and drive business growth.
+              </p>
+              <p>
+                My multidisciplinary expertise ensures that I can offer end-to-end solutions, right from project inception to successful implementation 🌐.
               </p>
             </div>
           </div>
