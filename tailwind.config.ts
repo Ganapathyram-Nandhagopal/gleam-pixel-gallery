@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         sans: ['Montserrat', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
         serif: ['Playfair Display', 'Georgia', 'serif'],
+        signature: ['Dancing Script', 'cursive'],
       },
       colors: {
         border: "hsl(var(--border))",
