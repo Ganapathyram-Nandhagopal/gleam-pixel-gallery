@@ -8,24 +8,75 @@ import Footer from "@/components/Footer";
 import blogMinimalist from "@/assets/blog-minimalist.jpg";
 import blogDesignSystems from "@/assets/blog-design-systems.jpg";
 import blogColorPsychology from "@/assets/blog-color-psychology.jpg";
+import blogMicrointeractions from "@/assets/blog-microinteractions.jpg";
+import blogAccessibility from "@/assets/blog-accessibility.jpg";
+import blogAiDesign from "@/assets/blog-ai-design.jpg";
+
+const blogPostsData = [
+  {
+    id: "1",
+    title: "The Art of Minimalist Design",
+    category: "Design Theory",
+    date: "Mar 15, 2025",
+    readTime: "5 min read",
+    image: blogMinimalist,
+    content: "Minimalist design is more than just removing elements—it's about finding the perfect balance between form and function, creating experiences that feel effortless and intuitive."
+  },
+  {
+    id: "2",
+    title: "Building Design Systems That Scale",
+    category: "Design Systems",
+    date: "Mar 10, 2025",
+    readTime: "8 min read",
+    image: blogDesignSystems,
+    content: "A comprehensive guide to creating consistent, maintainable design systems for growing products."
+  },
+  {
+    id: "3",
+    title: "Color Psychology in UI Design",
+    category: "UI Design",
+    date: "Mar 5, 2025",
+    readTime: "6 min read",
+    image: blogColorPsychology,
+    content: "Understanding how colors influence user behavior and emotional responses in digital interfaces."
+  },
+  {
+    id: "4",
+    title: "Microinteractions That Delight",
+    category: "UX Design",
+    date: "Feb 28, 2025",
+    readTime: "4 min read",
+    image: blogMicrointeractions,
+    content: "Small details that make a big difference in user experience and product satisfaction."
+  },
+  {
+    id: "5",
+    title: "Designing for Accessibility",
+    category: "Accessibility",
+    date: "Feb 20, 2025",
+    readTime: "7 min read",
+    image: blogAccessibility,
+    content: "Creating inclusive digital experiences that work for everyone, regardless of ability."
+  },
+  {
+    id: "6",
+    title: "The Future of AI in Design",
+    category: "Technology",
+    date: "Feb 15, 2025",
+    readTime: "10 min read",
+    image: blogAiDesign,
+    content: "How artificial intelligence is transforming the design process and what it means for creators."
+  }
+];
 
 const BlogPost = () => {
   const { id } = useParams();
-
-  const relatedPosts = [
-    {
-      id: 2,
-      title: "Building Design Systems That Scale",
-      category: "Design Systems",
-      image: blogDesignSystems,
-    },
-    {
-      id: 3,
-      title: "Color Psychology in UI Design",
-      category: "UI Design",
-      image: blogColorPsychology,
-    },
-  ];
+  
+  const currentPost = blogPostsData.find(post => post.id === id) || blogPostsData[0];
+  
+  const relatedPosts = blogPostsData
+    .filter(post => post.id !== id)
+    .slice(0, 2);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -42,29 +93,28 @@ const BlogPost = () => {
 
           <div className="space-y-8 animate-fade-in">
             <div className="space-y-4">
-              <Badge variant="secondary">Design Theory</Badge>
+              <Badge variant="secondary">{currentPost.category}</Badge>
               <h1 className="font-sans text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                The Art of Minimalist Design
+                {currentPost.title}
               </h1>
               <div className="flex items-center gap-4 text-muted-foreground">
-                <span>Mar 15, 2025</span>
+                <span>{currentPost.date}</span>
                 <span>•</span>
-                <span>5 min read</span>
+                <span>{currentPost.readTime}</span>
               </div>
             </div>
 
             <div className="relative h-96 rounded-3xl overflow-hidden">
               <img 
-                src={blogMinimalist} 
-                alt="The Art of Minimalist Design"
+                src={currentPost.image} 
+                alt={currentPost.title}
                 className="w-full h-full object-cover"
               />
             </div>
 
             <div className="prose prose-lg max-w-none space-y-6 text-foreground">
               <p className="text-xl leading-relaxed text-muted-foreground">
-                Minimalist design is more than just removing elements—it's about finding the perfect balance 
-                between form and function, creating experiences that feel effortless and intuitive.
+                {currentPost.content}
               </p>
 
               <h2 className="font-sans text-3xl font-bold mt-12">The Philosophy Behind Minimalism</h2>

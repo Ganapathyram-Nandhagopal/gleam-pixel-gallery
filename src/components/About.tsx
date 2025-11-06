@@ -2,7 +2,7 @@ import { Badge } from "@/components/ui/badge";
 
 const skills = [
   "ERP Implementation", "Business Analyst", "ERPNext", "Odoo", 
-  "OFBiz", "Frappe Framework", "Figma", "React", "Tailwind CSS", "TypeScript"
+  "OFBiz", "Frappe Framework", "Figma"
 ];
 
 const About = () => {
