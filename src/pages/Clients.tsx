@@ -73,47 +73,6 @@ const Clients = () => {
             </p>
           </div>
 
-          {/* Stats Section */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-12 sm:mb-16 md:mb-20">
-            {[
-              { number: "50+", label: "Projects Completed" },
-              { number: "30+", label: "Happy Clients" },
-              { number: "5+", label: "Years Experience" },
-              { number: "98%", label: "Client Satisfaction" },
-            ].map((stat, index) => (
-              <div key={index} className="text-center animate-scale-in">
-                <div className="font-sans text-5xl font-bold gradient-text mb-2">
-                  {stat.number}
-                </div>
-                <p className="text-muted-foreground">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Client Logos Section */}
-          <div className="mb-20">
-            <h2 className="font-sans text-3xl font-bold text-center mb-12">
-              Our <span className="gradient-text">Valued Clients</span>
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
-              {clients.map((client, index) => (
-                <div key={index} className="flex flex-col items-center justify-center p-6 bg-card rounded-xl border border-border hover:border-primary/50 transition-all animate-scale-in">
-                  {client.logo ? (
-                    <img 
-                      src={client.logo} 
-                      alt={`${client.name} logo`}
-                      className="w-full h-24 object-contain mb-4"
-                    />
-                  ) : (
-                    <div className="w-full h-24 flex items-center justify-center mb-4">
-                      <span className="text-2xl font-bold text-muted-foreground">{client.name}</span>
-                    </div>
-                  )}
-                  <p className="text-sm text-muted-foreground text-center">{client.industry}</p>
-                </div>
-              ))}
-            </div>
-          </div>
 
           {/* CTA Section */}
           <div className="mt-12 text-center py-16 bg-secondary/50 rounded-3xl animate-fade-in">
