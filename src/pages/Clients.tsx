@@ -73,6 +73,22 @@ const Clients = () => {
             </p>
           </div>
 
+          {/* Stats Section */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-12 sm:mb-16 md:mb-20">
+            {[
+              { number: "10+", label: "Projects Completed" },
+              { number: "7", label: "Happy Clients" },
+              { number: "3+", label: "Years Experience" },
+              { number: "98%", label: "Client Satisfaction" },
+            ].map((stat, index) => (
+              <div key={index} className="text-center animate-scale-in">
+                <div className="font-sans text-5xl font-bold gradient-text mb-2">
+                  {stat.number}
+                </div>
+                <p className="text-muted-foreground">{stat.label}</p>
+              </div>
+            ))}
+          </div>
 
           {/* CTA Section */}
           <div className="mt-12 text-center py-16 bg-secondary/50 rounded-3xl animate-fade-in">
