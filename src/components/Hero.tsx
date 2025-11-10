@@ -8,15 +8,15 @@ const Hero = () => {
       <div className="max-w-5xl w-full text-center space-y-6 sm:space-y-8 animate-fade-in">
         <div className="space-y-2">
           <h1 className="font-sans text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-tight">
-            Designing{" "}
-            <span className="gradient-text">Premium</span>
+            Shaping{" "}
+            <span className="gradient-text">Business</span>
             <br />
-            Experiences
+            Strategy
           </h1>
         </div>
         
         <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed px-4">
-          A passionate designer and developer crafting premium digital experiences with a focus on ERP solutions and modern web applications.
+          A business minded ERP Consultant and Analyst passionate about transforming complex business challenges into seamless, technology-driven solutions that improve performance and profitability.
         </p>
 
         <div className="flex justify-center gap-4 pt-2">
