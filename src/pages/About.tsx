@@ -42,18 +42,18 @@ const About = () => {
           {/* Story Section */}
           <div className="mb-12 sm:mb-16 md:mb-20">
             <div className="animate-slide-up">
-              <h2 className="font-sans text-3xl font-bold mb-6">My Story</h2>
+              <h2 className="font-sans text-3xl font-bold mb-6">🎓 Professional Summary</h2>
               <p className="text-muted-foreground mb-4">
-                I graduated with a degree in Commerce, specializing in Computer Applications 🎓. This laid the foundation for my journey into the world of ERP solutions. I initially kick-started my career as an ERPNext Implementation Consultant 🛠️, where I gained invaluable experience and insight into the ERP landscape.
+                I hold a Bachelor's degree in Commerce with a specialization in Computer Applications, which laid a strong foundation for my journey into the dynamic world of ERP solutions. I began my career as an ERPNext Functional Consultant, where I gained valuable hands-on experience and deep insights into the ERP landscape.
               </p>
               <p className="text-muted-foreground mb-4">
-                With comprehensive knowledge and hands-on experience in ERPNext Implementation, Business Development 📈, Project Management 📊, and Consulting 💡, I have the skill set to deliver high-quality ERP solutions tailored to meet the unique needs of each client.
+                With a proven background in ERPNext Implementation, Business Analysis, Project Management, and Consulting, I possess the expertise to deliver comprehensive, high-quality ERP solutions tailored to meet diverse business requirements.
+              </p>
+              <p className="text-muted-foreground mb-4">
+                Currently, my focus is on driving business development initiatives across the Retail, Manufacturing, Service, and Healthcare sectors. My goal is to implement robust ERP systems that streamline operations, enhance productivity, and foster sustainable business growth.
               </p>
               <p className="text-muted-foreground">
-                At present, my role is laser-focused on spearheading business development initiatives 🚀. I am keenly concentrated on the Manufacturing 🏭, Service 📞, and Healthcare 🏥 sectors, where I aim to implement ERP solutions that streamline operations, enhance productivity, and drive business growth.
-              </p>
-              <p className="text-muted-foreground mt-4">
-                My multidisciplinary expertise ensures that I can offer end-to-end solutions, right from project inception to successful implementation 🌐.
+                Leveraging my multidisciplinary expertise, I provide end-to-end ERP solutions — from project inception and strategic planning to seamless implementation and post-deployment support — ensuring measurable value and long-term success for every client.
               </p>
             </div>
           </div>
