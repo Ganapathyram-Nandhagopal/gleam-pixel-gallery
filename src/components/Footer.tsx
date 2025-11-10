@@ -39,19 +39,11 @@ const Footer = () => {
             <iframe 
               loading="lazy" 
               className="absolute w-full h-full top-0 left-0 border-none"
-              src="https://www.canva.com/design/DAG3z0wGq-I/zMtETqmKyXk-9Pe1wXYNoA/view?embed" 
+              src="https://ganapathy.my.canva.site/" 
               allowFullScreen
               allow="fullscreen"
             />
           </div>
-          <a 
-            href="https://www.canva.com/design/DAG3z0wGq-I/zMtETqmKyXk-9Pe1wXYNoA/view?utm_content=DAG3z0wGq-I&utm_campaign=designshare&utm_medium=embeds&utm_source=link" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-xs text-muted-foreground hover:text-foreground transition-colors text-center"
-          >
-            Black White and Orange Modern Pitch Deck Presentation by Ganapathy
-          </a>
         </DialogContent>
       </Dialog>
     </>
