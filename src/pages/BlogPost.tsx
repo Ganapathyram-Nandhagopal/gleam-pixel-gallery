@@ -84,7 +84,7 @@ const BlogPost = () => {
       
       <main className="flex-1 pt-24 pb-24">
         <article className="max-w-4xl mx-auto px-6 md:px-12">
-          <Link to="/blog">
+          <Link to="/blog.html">
             <Button variant="ghost" className="mb-8">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Blog

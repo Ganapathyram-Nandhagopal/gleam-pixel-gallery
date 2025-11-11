@@ -10,7 +10,7 @@ const Navbar = () => {
   const NavLinks = ({ mobile = false, onLinkClick }: { mobile?: boolean; onLinkClick?: () => void }) => (
     <>
       <NavLink 
-        to="/" 
+        to="/home.html" 
         onClick={onLinkClick}
         className={({ isActive }) => 
           `${isActive ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"} transition-colors ${mobile ? "text-lg py-2 block" : ""}`
@@ -19,7 +19,7 @@ const Navbar = () => {
         Home
       </NavLink>
       <NavLink 
-        to="/about" 
+        to="/about.html" 
         onClick={onLinkClick}
         className={({ isActive }) => 
           `${isActive ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"} transition-colors ${mobile ? "text-lg py-2 block" : ""}`
@@ -28,7 +28,7 @@ const Navbar = () => {
         About
       </NavLink>
       <NavLink 
-        to="/services" 
+        to="/services.html" 
         onClick={onLinkClick}
         className={({ isActive }) => 
           `${isActive ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"} transition-colors ${mobile ? "text-lg py-2 block" : ""}`
@@ -37,7 +37,7 @@ const Navbar = () => {
         Services
       </NavLink>
       <NavLink 
-        to="/clients" 
+        to="/clients.html" 
         onClick={onLinkClick}
         className={({ isActive }) => 
           `${isActive ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"} transition-colors ${mobile ? "text-lg py-2 block" : ""}`
@@ -46,7 +46,7 @@ const Navbar = () => {
         Clients
       </NavLink>
       <NavLink 
-        to="/blog" 
+        to="/blog.html" 
         onClick={onLinkClick}
         className={({ isActive }) => 
           `${isActive ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"} transition-colors ${mobile ? "text-lg py-2 block" : ""}`
@@ -54,7 +54,7 @@ const Navbar = () => {
       >
         Blog
       </NavLink>
-      <NavLink to="/contact" onClick={onLinkClick}>
+      <NavLink to="/contact.html" onClick={onLinkClick}>
         <Button variant="premium" size="sm" className={mobile ? "w-full" : ""}>
           Contact
         </Button>
@@ -66,7 +66,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-24 py-4">
         <div className="flex items-center justify-between">
-          <NavLink to="/" className="text-xl sm:text-2xl font-signature font-bold gradient-text">
+          <NavLink to="/home.html" className="text-xl sm:text-2xl font-signature font-bold gradient-text">
             #GR
           </NavLink>
 

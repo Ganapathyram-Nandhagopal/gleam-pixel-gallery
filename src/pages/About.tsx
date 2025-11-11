@@ -98,7 +98,7 @@ const About = () => {
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
               Ready to transform your business with innovative solutions? Let's discuss your project.
             </p>
-            <NavLink to="/contact">
+            <NavLink to="/contact.html">
               <Button variant="premium" size="lg">
                 Get in Touch
               </Button>

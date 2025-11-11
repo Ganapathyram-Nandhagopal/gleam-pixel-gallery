@@ -99,7 +99,7 @@ const Services = () => {
                       ))}
                     </ul>
                   </div>
-                  <NavLink to="/contact">
+                  <NavLink to="/contact.html">
                     <Button variant="premium" className="w-full">
                       Get Started
                     </Button>
@@ -144,7 +144,7 @@ const Services = () => {
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
               Let's discuss how we can help transform your business with the right technology solutions.
             </p>
-            <NavLink to="/contact">
+            <NavLink to="/contact.html">
               <Button variant="premium" size="lg">
                 Contact Us Today
               </Button>

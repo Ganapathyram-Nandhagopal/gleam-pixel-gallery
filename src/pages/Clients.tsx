@@ -98,7 +98,7 @@ const Clients = () => {
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
               Ready to transform your business? Let's create something amazing together.
             </p>
-            <NavLink to="/contact">
+            <NavLink to="/contact.html">
               <Button variant="premium" size="lg">
                 Start Your Project
               </Button>
