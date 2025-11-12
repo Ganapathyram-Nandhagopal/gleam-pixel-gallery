@@ -1,4 +1,5 @@
 import { useParams, Link } from "react-router-dom";
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -77,6 +78,10 @@ const BlogPost = () => {
   const relatedPosts = blogPostsData
     .filter(post => post.id !== id)
     .slice(0, 2);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [id]);
 
   return (
     <div className="min-h-screen flex flex-col">
