@@ -1,9 +1,9 @@
 import { useParams, Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Twitter, Linkedin, Facebook, Share2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import blogMinimalist from "@/assets/blog-minimalist.jpg";
@@ -72,6 +72,7 @@ const blogPostsData = [
 
 const BlogPost = () => {
   const { id } = useParams();
+  const [isTransitioning, setIsTransitioning] = useState(false);
   
   const currentPost = blogPostsData.find(post => post.id === id) || blogPostsData[0];
   
@@ -80,8 +81,34 @@ const BlogPost = () => {
     .slice(0, 2);
 
   useEffect(() => {
+    setIsTransitioning(true);
     window.scrollTo({ top: 0, behavior: "smooth" });
+    
+    const timer = setTimeout(() => {
+      setIsTransitioning(false);
+    }, 300);
+    
+    return () => clearTimeout(timer);
   }, [id]);
+
+  const shareUrl = `https://ganapathyram.vercel.app/blog/${id}`;
+  const shareTitle = currentPost.title;
+
+  const handleShare = (platform: string) => {
+    let url = '';
+    switch(platform) {
+      case 'twitter':
+        url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareTitle)}&url=${encodeURIComponent(shareUrl)}`;
+        break;
+      case 'linkedin':
+        url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
+        break;
+      case 'facebook':
+        url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+        break;
+    }
+    window.open(url, '_blank', 'width=600,height=400');
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -96,7 +123,7 @@ const BlogPost = () => {
             </Button>
           </Link>
 
-          <div className="space-y-8 animate-fade-in">
+          <div className={`space-y-8 transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100 animate-fade-in'}`}>
             <div className="space-y-4">
               <Badge variant="secondary">{currentPost.category}</Badge>
               <h1 className="font-sans text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
@@ -157,6 +184,45 @@ const BlogPost = () => {
                 feel cold or confusing. The goal is to find that sweet spot where simplicity enhances rather 
                 than hinders the user experience.
               </p>
+            </div>
+          </div>
+
+          {/* Social Share Section */}
+          <div className="mt-16 pt-8 border-t border-border">
+            <div className="flex items-center justify-between flex-wrap gap-4">
+              <div className="flex items-center gap-2 text-muted-foreground">
+                <Share2 className="h-5 w-5" />
+                <span className="font-medium">Share this article</span>
+              </div>
+              <div className="flex gap-3">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={() => handleShare('twitter')}
+                  className="hover:bg-[#1DA1F2] hover:text-white hover:border-[#1DA1F2] transition-colors"
+                  aria-label="Share on Twitter"
+                >
+                  <Twitter className="h-4 w-4" />
+                </Button>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={() => handleShare('linkedin')}
+                  className="hover:bg-[#0A66C2] hover:text-white hover:border-[#0A66C2] transition-colors"
+                  aria-label="Share on LinkedIn"
+                >
+                  <Linkedin className="h-4 w-4" />
+                </Button>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={() => handleShare('facebook')}
+                  className="hover:bg-[#1877F2] hover:text-white hover:border-[#1877F2] transition-colors"
+                  aria-label="Share on Facebook"
+                >
+                  <Facebook className="h-4 w-4" />
+                </Button>
+              </div>
             </div>
           </div>
 
