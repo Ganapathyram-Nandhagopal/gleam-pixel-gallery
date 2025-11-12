@@ -50,7 +50,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="text-xs text-muted-foreground hover:text-foreground transition-colors text-center"
           >
-            Black White and Orange Modern Pitch Deck Presentation by Ganapathy
+            Brochure by Ganapathy
           </a>
         </DialogContent>
       </Dialog>
