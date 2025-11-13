@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, Twitter, Linkedin, Facebook, Share2 } from "lucide-react";
+import { ArrowLeft, Twitter, Linkedin, Facebook, Share2, Copy, Check } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import blogMinimalist from "@/assets/blog-minimalist.jpg";
@@ -72,7 +73,9 @@ const blogPostsData = [
 
 const BlogPost = () => {
   const { id } = useParams();
+  const { toast } = useToast();
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
   
   const currentPost = blogPostsData.find(post => post.id === id) || blogPostsData[0];
   
@@ -91,6 +94,39 @@ const BlogPost = () => {
     return () => clearTimeout(timer);
   }, [id]);
 
+  useEffect(() => {
+    // Update Open Graph meta tags for social sharing
+    const ogTags = [
+      { property: 'og:title', content: currentPost.title },
+      { property: 'og:description', content: currentPost.content },
+      { property: 'og:image', content: `https://ganapathyram.vercel.app${currentPost.image}` },
+      { property: 'og:url', content: `https://ganapathyram.vercel.app/blog/${id}` },
+      { property: 'og:type', content: 'article' },
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:title', content: currentPost.title },
+      { name: 'twitter:description', content: currentPost.content },
+      { name: 'twitter:image', content: `https://ganapathyram.vercel.app${currentPost.image}` }
+    ];
+
+    ogTags.forEach(tag => {
+      const existingTag = document.querySelector(
+        tag.property ? `meta[property="${tag.property}"]` : `meta[name="${tag.name}"]`
+      );
+      
+      if (existingTag) {
+        existingTag.setAttribute('content', tag.content);
+      } else {
+        const meta = document.createElement('meta');
+        if (tag.property) meta.setAttribute('property', tag.property);
+        if (tag.name) meta.setAttribute('name', tag.name);
+        meta.setAttribute('content', tag.content);
+        document.head.appendChild(meta);
+      }
+    });
+
+    document.title = `${currentPost.title} | Ganapathyram Nandhagopal`;
+  }, [currentPost, id]);
+
   const shareUrl = `https://ganapathyram.vercel.app/blog/${id}`;
   const shareTitle = currentPost.title;
 
@@ -108,6 +144,24 @@ const BlogPost = () => {
         break;
     }
     window.open(url, '_blank', 'width=600,height=400');
+  };
+
+  const handleCopyLink = async () => {
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      setIsCopied(true);
+      toast({
+        title: "Link copied!",
+        description: "Blog post URL has been copied to clipboard.",
+      });
+      setTimeout(() => setIsCopied(false), 2000);
+    } catch (err) {
+      toast({
+        title: "Failed to copy",
+        description: "Please try again.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
@@ -195,6 +249,15 @@ const BlogPost = () => {
                 <span className="font-medium">Share this article</span>
               </div>
               <div className="flex gap-3">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={handleCopyLink}
+                  className="hover:bg-primary hover:text-primary-foreground transition-colors"
+                  aria-label="Copy link"
+                >
+                  {isCopied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+                </Button>
                 <Button
                   variant="outline"
                   size="icon"
