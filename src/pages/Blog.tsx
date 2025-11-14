@@ -9,6 +9,7 @@ import blogColorPsychology from "@/assets/blog-color-psychology.jpg";
 import blogMicrointeractions from "@/assets/blog-microinteractions.jpg";
 import blogAccessibility from "@/assets/blog-accessibility.jpg";
 import blogAiDesign from "@/assets/blog-ai-design.jpg";
+import blogErpInventory from "@/assets/blog-erp-inventory.jpg";
 
 const blogPosts = [
   {
@@ -64,6 +65,15 @@ const blogPosts = [
     date: "Feb 15, 2025",
     readTime: "10 min read",
     image: blogAiDesign,
+  },
+  {
+    id: 7,
+    title: "Inventory Mismatch & Stock Losses — How ERP Brings 100% Stock Accuracy",
+    excerpt: "Discover how ERP systems eliminate inventory mismatches and achieve near-perfect stock accuracy with real-world examples.",
+    category: "ERP & Business",
+    date: "Mar 20, 2025",
+    readTime: "12 min read",
+    image: blogErpInventory,
   },
 ];
 

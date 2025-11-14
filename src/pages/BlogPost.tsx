@@ -13,6 +13,7 @@ import blogColorPsychology from "@/assets/blog-color-psychology.jpg";
 import blogMicrointeractions from "@/assets/blog-microinteractions.jpg";
 import blogAccessibility from "@/assets/blog-accessibility.jpg";
 import blogAiDesign from "@/assets/blog-ai-design.jpg";
+import blogErpInventory from "@/assets/blog-erp-inventory.jpg";
 
 const blogPostsData = [
   {
@@ -68,6 +69,15 @@ const blogPostsData = [
     readTime: "10 min read",
     image: blogAiDesign,
     content: "How artificial intelligence is transforming the design process and what it means for creators."
+  },
+  {
+    id: "7",
+    title: "Inventory Mismatch & Stock Losses — How ERP Brings 100% Stock Accuracy",
+    category: "ERP & Business",
+    date: "Mar 20, 2025",
+    readTime: "12 min read",
+    image: blogErpInventory,
+    content: "Inventory mismatch is one of the most common and costly problems businesses face today. Whether you run a trading business, retail shop, manufacturing unit, or distribution company, stock inaccuracy directly impacts profit, customer satisfaction, and cash flow."
   }
 ];
 
@@ -203,41 +213,409 @@ const BlogPost = () => {
                 {currentPost.content}
               </p>
 
-              <h2 className="font-sans text-3xl font-bold mt-12">The Philosophy Behind Minimalism</h2>
-              <p>
-                At its core, minimalist design is about intentionality. Every element on the screen should 
-                serve a purpose, whether functional or aesthetic. This approach forces designers to make 
-                deliberate choices about what to include and, more importantly, what to leave out.
-              </p>
+              {id === "7" ? (
+                // ERP Blog Post Content
+                <>
+                  <p>
+                    In this blog, let's understand: Why inventory mismatches happen, how much loss they create, 
+                    live table-based ERP entry examples showing how ERP fixes the problem, and how businesses 
+                    achieve near 100% stock accuracy with ERP.
+                  </p>
 
-              <h2 className="font-sans text-3xl font-bold mt-12">Less is More</h2>
-              <p>
-                This famous architectural principle applies perfectly to digital design. By reducing visual 
-                clutter and focusing on essential elements, we create interfaces that are easier to understand 
-                and more pleasant to use. White space becomes an active design element, not empty space to be filled.
-              </p>
+                  <h2 className="font-sans text-3xl font-bold mt-12">⭐ What Is Inventory Mismatch?</h2>
+                  <p>
+                    Inventory mismatch means the physical stock in your warehouse does not match the system 
+                    stock recorded in your software/spreadsheet.
+                  </p>
+                  
+                  <p className="font-semibold">Common causes:</p>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>Manual data entry errors</li>
+                    <li>Missing GRN (Goods Receipt Note)</li>
+                    <li>Unrecorded stock issues</li>
+                    <li>Wrong packing / wrong bin</li>
+                    <li>Theft or misplacement</li>
+                    <li>Wrong UOM conversion (box vs piece)</li>
+                    <li>Expired or damaged items not recorded</li>
+                  </ul>
+                  <p>Even a 5% mismatch affects profitability significantly.</p>
 
-              <h2 className="font-sans text-3xl font-bold mt-12">Key Principles</h2>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>Start with content and build the design around it</li>
-                <li>Use white space strategically to create visual hierarchy</li>
-                <li>Limit your color palette to create cohesion</li>
-                <li>Choose typography that is both readable and beautiful</li>
-                <li>Remove decorative elements that don't add value</li>
-              </ul>
+                  <h2 className="font-sans text-3xl font-bold mt-12">⭐ Live Example: How Inventory Mismatch Happens (Without ERP)</h2>
+                  <p>Let's take an example item: <strong>Bluetooth Speaker</strong>.</p>
+                  <p>
+                    <strong>Scenario:</strong> Warehouse receives 100 units. Packing team takes 10 units 
+                    urgently without updating Excel.
+                  </p>
 
-              <h2 className="font-sans text-3xl font-bold mt-12">Real-World Application</h2>
-              <p>
-                Companies like Apple have mastered minimalist design, creating products that feel premium and 
-                accessible. Their interfaces guide users naturally through tasks without overwhelming them with 
-                options or unnecessary embellishments.
-              </p>
+                  <div className="overflow-x-auto my-8">
+                    <table className="min-w-full border-collapse border border-border">
+                      <thead className="bg-muted">
+                        <tr>
+                          <th className="border border-border px-4 py-2 text-left">Step</th>
+                          <th className="border border-border px-4 py-2 text-left">Activity</th>
+                          <th className="border border-border px-4 py-2 text-left">Physical Stock</th>
+                          <th className="border border-border px-4 py-2 text-left">System Stock</th>
+                          <th className="border border-border px-4 py-2 text-left">Issue</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td className="border border-border px-4 py-2">1</td>
+                          <td className="border border-border px-4 py-2">Supplier delivers 100 units</td>
+                          <td className="border border-border px-4 py-2">100</td>
+                          <td className="border border-border px-4 py-2">0</td>
+                          <td className="border border-border px-4 py-2">No entry made</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-border px-4 py-2">2</td>
+                          <td className="border border-border px-4 py-2">Storekeeper updates Excel</td>
+                          <td className="border border-border px-4 py-2">100</td>
+                          <td className="border border-border px-4 py-2">100</td>
+                          <td className="border border-border px-4 py-2">OK</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-border px-4 py-2">3</td>
+                          <td className="border border-border px-4 py-2">Packing team takes 10 units, forgets to update Excel</td>
+                          <td className="border border-border px-4 py-2">90</td>
+                          <td className="border border-border px-4 py-2">100</td>
+                          <td className="border border-border px-4 py-2 text-destructive font-semibold">Mismatch (10 units)</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-border px-4 py-2">4</td>
+                          <td className="border border-border px-4 py-2">Sales team books order for 100 units</td>
+                          <td className="border border-border px-4 py-2">90</td>
+                          <td className="border border-border px-4 py-2">100</td>
+                          <td className="border border-border px-4 py-2">Wrong confirmation</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-border px-4 py-2">5</td>
+                          <td className="border border-border px-4 py-2">Warehouse finds only 90 units physically</td>
+                          <td className="border border-border px-4 py-2">90</td>
+                          <td className="border border-border px-4 py-2">100</td>
+                          <td className="border border-border px-4 py-2 text-destructive font-semibold">Customer delay, business loss</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
 
-              <p>
-                The challenge lies in knowing when enough is enough. Too much minimalism can make an interface 
-                feel cold or confusing. The goal is to find that sweet spot where simplicity enhances rather 
-                than hinders the user experience.
-              </p>
+                  <p className="font-semibold">📌 Direct Loss</p>
+                  <p>If each unit costs ₹120:</p>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>Loss = 10 × 120 = ₹1,200 (immediate)</li>
+                    <li>Plus: lost sales because stock was promised but not available</li>
+                  </ul>
+
+                  <h2 className="font-sans text-3xl font-bold mt-12">⭐ How ERP Eliminates Inventory Mismatch</h2>
+                  <p>
+                    ERP ensures that every movement of stock is recorded as a document, eliminating manual 
+                    errors completely. Below is the same scenario inside an ERP system.
+                  </p>
+
+                  <h3 className="font-sans text-2xl font-bold mt-8">🔹 1. Purchase Receipt Entry (GRN)</h3>
+                  <div className="overflow-x-auto my-8">
+                    <table className="min-w-full border-collapse border border-border">
+                      <thead className="bg-muted">
+                        <tr>
+                          <th className="border border-border px-4 py-2 text-left">ERP Document</th>
+                          <th className="border border-border px-4 py-2 text-left">Field</th>
+                          <th className="border border-border px-4 py-2 text-left">Value</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td className="border border-border px-4 py-2" rowSpan={5}>Purchase Receipt</td>
+                          <td className="border border-border px-4 py-2">Supplier</td>
+                          <td className="border border-border px-4 py-2">ABC Electronics</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-border px-4 py-2">Item</td>
+                          <td className="border border-border px-4 py-2">Bluetooth Speaker</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-border px-4 py-2">Quantity Received</td>
+                          <td className="border border-border px-4 py-2">100 units</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-border px-4 py-2">Stock Location</td>
+                          <td className="border border-border px-4 py-2">WH1-Rack-A</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-border px-4 py-2">System Stock After Posting</td>
+                          <td className="border border-border px-4 py-2 text-primary font-semibold">100 units</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  
+                  <p className="font-semibold">ERP Advantage:</p>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>✔ No manual entry</li>
+                    <li>✔ Instant stock update</li>
+                    <li>✔ Valuation + Ledger updated automatically</li>
+                  </ul>
+
+                  <h3 className="font-sans text-2xl font-bold mt-8">🔹 2. Sales Order Entry</h3>
+                  <div className="overflow-x-auto my-8">
+                    <table className="min-w-full border-collapse border border-border">
+                      <thead className="bg-muted">
+                        <tr>
+                          <th className="border border-border px-4 py-2 text-left">ERP Document</th>
+                          <th className="border border-border px-4 py-2 text-left">Field</th>
+                          <th className="border border-border px-4 py-2 text-left">Value</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td className="border border-border px-4 py-2" rowSpan={4}>Sales Order</td>
+                          <td className="border border-border px-4 py-2">Customer</td>
+                          <td className="border border-border px-4 py-2">SmartX Retail</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-border px-4 py-2">Item</td>
+                          <td className="border border-border px-4 py-2">Bluetooth Speaker</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-border px-4 py-2">Ordered Qty</td>
+                          <td className="border border-border px-4 py-2">10 units</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-border px-4 py-2">Available Stock</td>
+                          <td className="border border-border px-4 py-2 text-primary font-semibold">100 units</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <p>ERP ensures the sales team only sees live real-time stock.</p>
+
+                  <h3 className="font-sans text-2xl font-bold mt-8">🔹 3. Delivery Note / Stock Issue Entry</h3>
+                  <p>Warehouse cannot remove stock without a delivery entry.</p>
+                  <div className="overflow-x-auto my-8">
+                    <table className="min-w-full border-collapse border border-border">
+                      <thead className="bg-muted">
+                        <tr>
+                          <th className="border border-border px-4 py-2 text-left">ERP Document</th>
+                          <th className="border border-border px-4 py-2 text-left">Field</th>
+                          <th className="border border-border px-4 py-2 text-left">Value</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td className="border border-border px-4 py-2" rowSpan={4}>Delivery Note</td>
+                          <td className="border border-border px-4 py-2">Item</td>
+                          <td className="border border-border px-4 py-2">Bluetooth Speaker</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-border px-4 py-2">Quantity Issued</td>
+                          <td className="border border-border px-4 py-2">10 units</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-border px-4 py-2">Picked By</td>
+                          <td className="border border-border px-4 py-2">Warehouse Staff</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-border px-4 py-2">System Stock After Posting</td>
+                          <td className="border border-border px-4 py-2 text-primary font-semibold">90 units</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <p className="font-semibold">ERP Advantage:</p>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>✔ No stock movement without approval</li>
+                    <li>✔ Physical stock = System stock</li>
+                    <li>✔ Eliminates mismatch</li>
+                  </ul>
+
+                  <h2 className="font-sans text-3xl font-bold mt-12">⭐ ERP Prevents Unauthorised Movement</h2>
+                  <p>If packing team tries to take 10 units without entry:</p>
+                  <p className="bg-destructive/10 border border-destructive p-4 rounded-lg text-destructive font-semibold">
+                    ERP Alert: "Stock cannot be removed — no Delivery Note created."
+                  </p>
+                  <p>This completely eliminates loss due to informal stock movements.</p>
+
+                  <h2 className="font-sans text-3xl font-bold mt-12">⭐ What if a Mismatch Still Occurs? (Stock Reconciliation)</h2>
+                  <p>Let's say during audit, actual stock is 89 units instead of 90.</p>
+                  
+                  <div className="overflow-x-auto my-8">
+                    <table className="min-w-full border-collapse border border-border">
+                      <thead className="bg-muted">
+                        <tr>
+                          <th className="border border-border px-4 py-2 text-left">Field</th>
+                          <th className="border border-border px-4 py-2 text-left">Value</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td className="border border-border px-4 py-2">Item</td>
+                          <td className="border border-border px-4 py-2">Bluetooth Speaker</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-border px-4 py-2">System Qty</td>
+                          <td className="border border-border px-4 py-2">90</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-border px-4 py-2">Physical Qty</td>
+                          <td className="border border-border px-4 py-2">89</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-border px-4 py-2">Difference</td>
+                          <td className="border border-border px-4 py-2 text-destructive">-1 (Shortage)</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-border px-4 py-2">Reason</td>
+                          <td className="border border-border px-4 py-2">Damage / Missing</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-border px-4 py-2">Adjusted By</td>
+                          <td className="border border-border px-4 py-2">Warehouse Manager</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-border px-4 py-2">Updated System Stock</td>
+                          <td className="border border-border px-4 py-2 text-primary font-semibold">89</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <p className="font-semibold">ERP Advantage:</p>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>✔ Tracks shortage reason</li>
+                    <li>✔ Updates stock + accounting</li>
+                    <li>✔ Creates audit trail for investigation</li>
+                  </ul>
+
+                  <h2 className="font-sans text-3xl font-bold mt-12">⭐ Manual System vs ERP — Clear Comparison</h2>
+                  <div className="overflow-x-auto my-8">
+                    <table className="min-w-full border-collapse border border-border">
+                      <thead className="bg-muted">
+                        <tr>
+                          <th className="border border-border px-4 py-2 text-left">Process</th>
+                          <th className="border border-border px-4 py-2 text-left">Manual System</th>
+                          <th className="border border-border px-4 py-2 text-left">ERP System</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td className="border border-border px-4 py-2">Stock Entry</td>
+                          <td className="border border-border px-4 py-2">Entered in Excel</td>
+                          <td className="border border-border px-4 py-2 text-primary font-semibold">Auto-updated through GRN</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-border px-4 py-2">Internal Movements</td>
+                          <td className="border border-border px-4 py-2">Not tracked</td>
+                          <td className="border border-border px-4 py-2 text-primary font-semibold">Stock Transfer document</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-border px-4 py-2">Sales Dispatch</td>
+                          <td className="border border-border px-4 py-2">Taken informally</td>
+                          <td className="border border-border px-4 py-2 text-primary font-semibold">Delivery Note required</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-border px-4 py-2">Accuracy</td>
+                          <td className="border border-border px-4 py-2">Low (70–80%)</td>
+                          <td className="border border-border px-4 py-2 text-primary font-semibold">High (98–100%)</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-border px-4 py-2">Accounting Impact</td>
+                          <td className="border border-border px-4 py-2">Not updated</td>
+                          <td className="border border-border px-4 py-2 text-primary font-semibold">Live valuation</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-border px-4 py-2">Audit Trail</td>
+                          <td className="border border-border px-4 py-2">None</td>
+                          <td className="border border-border px-4 py-2 text-primary font-semibold">Full history</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-border px-4 py-2">Theft/Damage</td>
+                          <td className="border border-border px-4 py-2">Goes unnoticed</td>
+                          <td className="border border-border px-4 py-2 text-primary font-semibold">Mandatory reason tracking</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-border px-4 py-2">Mismatch Frequency</td>
+                          <td className="border border-border px-4 py-2">Very high</td>
+                          <td className="border border-border px-4 py-2 text-primary font-semibold">Almost zero</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <h2 className="font-sans text-3xl font-bold mt-12">⭐ Real Case Study Result</h2>
+                  <p className="font-semibold">Company: FMCG Distributor – Tamil Nadu</p>
+                  
+                  <p className="font-semibold mt-4">Before ERP:</p>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>❌ Mismatch 20–25%</li>
+                    <li>❌ Repeated stock-outs</li>
+                    <li>❌ Dead stock worth ₹1 lakh</li>
+                  </ul>
+
+                  <p className="font-semibold mt-4">After ERP:</p>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>✔ Mandatory GRN + Delivery Notes</li>
+                    <li>✔ Barcode scanning</li>
+                    <li>✔ FIFO picking</li>
+                    <li>✔ Monthly stock audit via ERP</li>
+                  </ul>
+
+                  <p className="font-semibold mt-4">Final Result:</p>
+                  <ul className="space-y-2 text-primary font-semibold">
+                    <li>📌 Mismatch dropped to 1–2%</li>
+                    <li>📌 Savings approx ₹1.8 lakhs in 3 months</li>
+                    <li>📌 100% customer order fulfillment</li>
+                  </ul>
+
+                  <h2 className="font-sans text-3xl font-bold mt-12">⭐ Conclusion</h2>
+                  <p>Inventory mismatch is a silent profit-killer. But with a structured ERP:</p>
+                  <ul className="space-y-2 text-primary font-semibold">
+                    <li>✔ Every movement is tracked</li>
+                    <li>✔ Real-time stock accuracy</li>
+                    <li>✔ Zero manual errors</li>
+                    <li>✔ Transparent warehouse operations</li>
+                    <li>✔ Faster order processing</li>
+                  </ul>
+                  <p>This is how businesses achieve near 100% stock accuracy and drastically reduce losses.</p>
+                </>
+              ) : (
+                // Default blog post content (for other posts)
+                <>
+                  <h2 className="font-sans text-3xl font-bold mt-12">The Philosophy Behind Minimalism</h2>
+                  <p>
+                    At its core, minimalist design is about intentionality. Every element on the screen should 
+                    serve a purpose, whether functional or aesthetic. This approach forces designers to make 
+                    deliberate choices about what to include and, more importantly, what to leave out.
+                  </p>
+
+                  <h2 className="font-sans text-3xl font-bold mt-12">Less is More</h2>
+                  <p>
+                    This famous architectural principle applies perfectly to digital design. By reducing visual 
+                    clutter and focusing on essential elements, we create interfaces that are easier to understand 
+                    and more pleasant to use. White space becomes an active design element, not empty space to be filled.
+                  </p>
+
+                  <h2 className="font-sans text-3xl font-bold mt-12">Key Principles</h2>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>Start with content and build the design around it</li>
+                    <li>Use white space strategically to create visual hierarchy</li>
+                    <li>Limit your color palette to create cohesion</li>
+                    <li>Choose typography that is both readable and beautiful</li>
+                    <li>Remove decorative elements that don't add value</li>
+                  </ul>
+
+                  <h2 className="font-sans text-3xl font-bold mt-12">Real-World Application</h2>
+                  <p>
+                    Companies like Apple have mastered minimalist design, creating products that feel premium and 
+                    accessible. Their interfaces guide users naturally through tasks without overwhelming them with 
+                    options or unnecessary embellishments.
+                  </p>
+
+                  <p>
+                    The challenge lies in knowing when enough is enough. Too much minimalism can make an interface 
+                    feel cold or confusing. The goal is to find that sweet spot where simplicity enhances rather 
+                    than hinders the user experience.
+                  </p>
+                </>
+              )}
             </div>
           </div>
 
