@@ -301,18 +301,7 @@ const BlogPost = () => {
       return;
     }
 
-    // Save to localStorage
-    const subscriber = {
-      email,
-      name: newsletterName,
-      timestamp: new Date().toISOString()
-    };
-
-    const existingSubscribers = localStorage.getItem("newsletter-subscribers");
-    const subscribers = existingSubscribers ? JSON.parse(existingSubscribers) : [];
-    subscribers.push(subscriber);
-    localStorage.setItem("newsletter-subscribers", JSON.stringify(subscribers));
-
+    // In a real app, this would send to a backend
     toast({
       title: "Subscribed!",
       description: "Thank you for subscribing to our newsletter.",

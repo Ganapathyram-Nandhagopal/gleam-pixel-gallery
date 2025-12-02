@@ -26,7 +26,6 @@ const Footer = () => {
             </button>
             <a href="#" className="hover:text-foreground transition-colors">Terms</a>
             <Link to="/contact.html" className="hover:text-foreground transition-colors">Contact</Link>
-            <Link to="/admin" className="hover:text-foreground transition-colors">Admin</Link>
           </div>
         </div>
       </footer>
