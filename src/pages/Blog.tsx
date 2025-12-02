@@ -1,6 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import blogMinimalist from "@/assets/blog-minimalist.jpg";
@@ -78,6 +80,14 @@ const blogPosts = [
 ];
 
 const Blog = () => {
+  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+  
+  const categories = ["All", ...Array.from(new Set(blogPosts.map(post => post.category)))];
+  
+  const filteredPosts = selectedCategory === "All" 
+    ? blogPosts 
+    : blogPosts.filter(post => post.category === selectedCategory);
+  
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -93,8 +103,22 @@ const Blog = () => {
             </p>
           </div>
 
+          {/* Category Filter */}
+          <div className="flex flex-wrap justify-center gap-2 mb-8 sm:mb-12">
+            {categories.map((category) => (
+              <Button
+                key={category}
+                variant={selectedCategory === category ? "default" : "outline"}
+                onClick={() => setSelectedCategory(category)}
+                className="transition-all"
+              >
+                {category}
+              </Button>
+            ))}
+          </div>
+
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {blogPosts.map((post, index) => (
+            {filteredPosts.map((post, index) => (
               <Link key={post.id} to={`/blog/${post.id}`}>
                 <Card 
                   className="group cursor-pointer hover-lift h-full border-0"

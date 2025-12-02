@@ -3,7 +3,9 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, Twitter, Linkedin, Facebook, Share2, Copy, Check } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { ArrowLeft, Twitter, Linkedin, Facebook, Share2, Copy, Check, Heart, MessageCircle, Send, Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -81,17 +83,50 @@ const blogPostsData = [
   }
 ];
 
+interface Comment {
+  id: string;
+  author: string;
+  content: string;
+  timestamp: Date;
+  likes: number;
+  replies: Comment[];
+}
+
 const BlogPost = () => {
   const { id } = useParams();
   const { toast } = useToast();
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
   
+  // Comments state
+  const [comments, setComments] = useState<Comment[]>([]);
+  const [newComment, setNewComment] = useState("");
+  const [newName, setNewName] = useState("");
+  const [replyingTo, setReplyingTo] = useState<string | null>(null);
+  const [replyContent, setReplyContent] = useState("");
+  const [likedComments, setLikedComments] = useState<Set<string>>(new Set());
+  
+  // Newsletter state
+  const [email, setEmail] = useState("");
+  const [newsletterName, setNewsletterName] = useState("");
+  
   const currentPost = blogPostsData.find(post => post.id === id) || blogPostsData[0];
   
   const relatedPosts = blogPostsData
     .filter(post => post.id !== id)
     .slice(0, 2);
+
+  // Load comments from localStorage
+  useEffect(() => {
+    const savedComments = localStorage.getItem(`blog-comments-${id}`);
+    if (savedComments) {
+      const parsed = JSON.parse(savedComments);
+      setComments(parsed.map((c: any) => ({
+        ...c,
+        timestamp: new Date(c.timestamp)
+      })));
+    }
+  }, [id]);
 
   useEffect(() => {
     setIsTransitioning(true);
@@ -172,6 +207,108 @@ const BlogPost = () => {
         variant: "destructive",
       });
     }
+  };
+
+  const handleAddComment = () => {
+    if (!newComment.trim() || !newName.trim()) {
+      toast({
+        title: "Missing information",
+        description: "Please enter your name and comment.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    const comment: Comment = {
+      id: Date.now().toString(),
+      author: newName,
+      content: newComment,
+      timestamp: new Date(),
+      likes: 0,
+      replies: []
+    };
+
+    const updatedComments = [...comments, comment];
+    setComments(updatedComments);
+    localStorage.setItem(`blog-comments-${id}`, JSON.stringify(updatedComments));
+    
+    setNewComment("");
+    setNewName("");
+    toast({
+      title: "Comment posted!",
+      description: "Your comment has been added successfully.",
+    });
+  };
+
+  const handleLikeComment = (commentId: string) => {
+    const newLikedComments = new Set(likedComments);
+    
+    if (newLikedComments.has(commentId)) {
+      newLikedComments.delete(commentId);
+      setComments(comments.map(c => 
+        c.id === commentId ? { ...c, likes: c.likes - 1 } : c
+      ));
+    } else {
+      newLikedComments.add(commentId);
+      setComments(comments.map(c => 
+        c.id === commentId ? { ...c, likes: c.likes + 1 } : c
+      ));
+    }
+    
+    setLikedComments(newLikedComments);
+    localStorage.setItem(`blog-comments-${id}`, JSON.stringify(comments));
+  };
+
+  const handleReply = (commentId: string) => {
+    if (!replyContent.trim()) return;
+
+    const reply: Comment = {
+      id: Date.now().toString(),
+      author: "Anonymous",
+      content: replyContent,
+      timestamp: new Date(),
+      likes: 0,
+      replies: []
+    };
+
+    const updatedComments = comments.map(c => {
+      if (c.id === commentId) {
+        return { ...c, replies: [...c.replies, reply] };
+      }
+      return c;
+    });
+
+    setComments(updatedComments);
+    localStorage.setItem(`blog-comments-${id}`, JSON.stringify(updatedComments));
+    setReplyContent("");
+    setReplyingTo(null);
+    
+    toast({
+      title: "Reply posted!",
+      description: "Your reply has been added.",
+    });
+  };
+
+  const handleNewsletterSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email.trim() || !newsletterName.trim()) {
+      toast({
+        title: "Missing information",
+        description: "Please enter your name and email.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // In a real app, this would send to a backend
+    toast({
+      title: "Subscribed!",
+      description: "Thank you for subscribing to our newsletter.",
+    });
+    
+    setEmail("");
+    setNewsletterName("");
   };
 
   return (
@@ -665,6 +802,182 @@ const BlogPost = () => {
                 </Button>
               </div>
             </div>
+          </div>
+
+          {/* Comments Section */}
+          <div className="mt-16 pt-8 border-t border-border">
+            <div className="space-y-8">
+              <div className="flex items-center gap-2">
+                <MessageCircle className="h-6 w-6" />
+                <h3 className="font-sans text-2xl font-bold">Comments ({comments.length})</h3>
+              </div>
+
+              {/* Add Comment Form */}
+              <Card className="p-6">
+                <div className="space-y-4">
+                  <Input
+                    placeholder="Your name"
+                    value={newName}
+                    onChange={(e) => setNewName(e.target.value)}
+                  />
+                  <Textarea
+                    placeholder="Share your thoughts..."
+                    value={newComment}
+                    onChange={(e) => setNewComment(e.target.value)}
+                    rows={4}
+                  />
+                  <Button onClick={handleAddComment} className="w-full sm:w-auto">
+                    <Send className="mr-2 h-4 w-4" />
+                    Post Comment
+                  </Button>
+                </div>
+              </Card>
+
+              {/* Comments List */}
+              <div className="space-y-6">
+                {comments.map((comment) => (
+                  <Card key={comment.id} className="p-6">
+                    <div className="space-y-4">
+                      <div className="flex items-start justify-between">
+                        <div>
+                          <p className="font-semibold">{comment.author}</p>
+                          <p className="text-sm text-muted-foreground">
+                            {comment.timestamp.toLocaleDateString('en-US', { 
+                              month: 'short', 
+                              day: 'numeric', 
+                              year: 'numeric',
+                              hour: '2-digit',
+                              minute: '2-digit'
+                            })}
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <p className="text-muted-foreground">{comment.content}</p>
+                      
+                      <div className="flex items-center gap-4">
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          onClick={() => handleLikeComment(comment.id)}
+                          className={likedComments.has(comment.id) ? "text-primary" : ""}
+                        >
+                          <Heart className={`mr-2 h-4 w-4 ${likedComments.has(comment.id) ? "fill-current" : ""}`} />
+                          {comment.likes}
+                        </Button>
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          onClick={() => setReplyingTo(comment.id)}
+                        >
+                          <MessageCircle className="mr-2 h-4 w-4" />
+                          Reply
+                        </Button>
+                      </div>
+
+                      {/* Reply Form */}
+                      {replyingTo === comment.id && (
+                        <div className="ml-8 mt-4 space-y-2">
+                          <Textarea
+                            placeholder="Write a reply..."
+                            value={replyContent}
+                            onChange={(e) => setReplyContent(e.target.value)}
+                            rows={3}
+                          />
+                          <div className="flex gap-2">
+                            <Button size="sm" onClick={() => handleReply(comment.id)}>
+                              Post Reply
+                            </Button>
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              onClick={() => {
+                                setReplyingTo(null);
+                                setReplyContent("");
+                              }}
+                            >
+                              Cancel
+                            </Button>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Replies */}
+                      {comment.replies.length > 0 && (
+                        <div className="ml-8 mt-4 space-y-4 border-l-2 border-border pl-4">
+                          {comment.replies.map((reply) => (
+                            <div key={reply.id} className="space-y-2">
+                              <div className="flex items-start justify-between">
+                                <div>
+                                  <p className="font-semibold text-sm">{reply.author}</p>
+                                  <p className="text-xs text-muted-foreground">
+                                    {reply.timestamp.toLocaleDateString('en-US', { 
+                                      month: 'short', 
+                                      day: 'numeric',
+                                      hour: '2-digit',
+                                      minute: '2-digit'
+                                    })}
+                                  </p>
+                                </div>
+                              </div>
+                              <p className="text-sm text-muted-foreground">{reply.content}</p>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </Card>
+                ))}
+
+                {comments.length === 0 && (
+                  <p className="text-center text-muted-foreground py-8">
+                    No comments yet. Be the first to share your thoughts!
+                  </p>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* Newsletter Subscription */}
+          <div className="mt-16 pt-8 border-t border-border">
+            <Card className="p-8 bg-gradient-to-r from-primary/5 to-primary/10">
+              <div className="max-w-2xl mx-auto text-center space-y-6">
+                <div className="flex justify-center">
+                  <Mail className="h-12 w-12 text-primary" />
+                </div>
+                <div className="space-y-2">
+                  <h3 className="font-sans text-2xl font-bold">Subscribe to Our Newsletter</h3>
+                  <p className="text-muted-foreground">
+                    Get the latest insights on design, ERP, and business strategy delivered to your inbox.
+                  </p>
+                </div>
+                <form onSubmit={handleNewsletterSubmit} className="space-y-4">
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <Input
+                      type="text"
+                      placeholder="Your name"
+                      value={newsletterName}
+                      onChange={(e) => setNewsletterName(e.target.value)}
+                      className="bg-background"
+                    />
+                    <Input
+                      type="email"
+                      placeholder="your@email.com"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="bg-background"
+                    />
+                  </div>
+                  <Button type="submit" size="lg" className="w-full sm:w-auto">
+                    <Mail className="mr-2 h-4 w-4" />
+                    Subscribe Now
+                  </Button>
+                </form>
+                <p className="text-xs text-muted-foreground">
+                  We respect your privacy. Unsubscribe at any time.
+                </p>
+              </div>
+            </Card>
           </div>
 
           <div className="mt-24 space-y-8">
