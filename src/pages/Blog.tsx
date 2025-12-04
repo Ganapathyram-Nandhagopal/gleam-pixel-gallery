@@ -12,6 +12,8 @@ import blogMicrointeractions from "@/assets/blog-microinteractions.jpg";
 import blogAccessibility from "@/assets/blog-accessibility.jpg";
 import blogAiDesign from "@/assets/blog-ai-design.jpg";
 import blogErpInventory from "@/assets/blog-erp-inventory.jpg";
+import blogErpProcurement from "@/assets/blog-erp-procurement.jpg";
+import blogCrmSales from "@/assets/blog-crm-sales.jpg";
 
 const blogPosts = [
   {
@@ -76,6 +78,24 @@ const blogPosts = [
     date: "Mar 20, 2025",
     readTime: "12 min read",
     image: blogErpInventory,
+  },
+  {
+    id: 8,
+    title: "Delayed Purchase Approvals — How ERP Workflow Automation Speeds Up Procurement",
+    excerpt: "Learn how ERP workflow automation eliminates approval bottlenecks and reduces procurement time by 70-80%.",
+    category: "ERP & Business",
+    date: "Mar 25, 2025",
+    readTime: "10 min read",
+    image: blogErpProcurement,
+  },
+  {
+    id: 9,
+    title: "Manual Sales Follow-ups — How ERP CRM Increases Conversion Rate by 40%",
+    excerpt: "Discover how ERP-integrated CRM transforms sales follow-ups and dramatically improves conversion rates.",
+    category: "ERP & Business",
+    date: "Mar 28, 2025",
+    readTime: "11 min read",
+    image: blogCrmSales,
   },
 ];
 
