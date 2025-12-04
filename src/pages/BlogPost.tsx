@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { ArrowLeft, Twitter, Linkedin, Facebook, Share2, Copy, Check, Heart, MessageCircle, Send, Mail } from "lucide-react";
+import { ArrowLeft, Heart, MessageCircle, Send, Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -16,6 +16,9 @@ import blogMicrointeractions from "@/assets/blog-microinteractions.jpg";
 import blogAccessibility from "@/assets/blog-accessibility.jpg";
 import blogAiDesign from "@/assets/blog-ai-design.jpg";
 import blogErpInventory from "@/assets/blog-erp-inventory.jpg";
+import blogErpProcurement from "@/assets/blog-erp-procurement.jpg";
+import blogCrmSales from "@/assets/blog-crm-sales.jpg";
+import signature from "@/assets/signature.png";
 
 const blogPostsData = [
   {
@@ -80,6 +83,24 @@ const blogPostsData = [
     readTime: "12 min read",
     image: blogErpInventory,
     content: "Inventory mismatch is one of the most common and costly problems businesses face today. Whether you run a trading business, retail shop, manufacturing unit, or distribution company, stock inaccuracy directly impacts profit, customer satisfaction, and cash flow."
+  },
+  {
+    id: "8",
+    title: "Delayed Purchase Approvals — How ERP Workflow Automation Speeds Up Procurement",
+    category: "ERP & Business",
+    date: "Mar 25, 2025",
+    readTime: "10 min read",
+    image: blogErpProcurement,
+    content: "In many organizations, purchase approvals take longer than the actual buying process. A request raised by a team member travels through multiple people, waits in inboxes, and often gets stuck due to simple human delays."
+  },
+  {
+    id: "9",
+    title: "Manual Sales Follow-ups — How ERP CRM Increases Conversion Rate by 40%",
+    category: "ERP & Business",
+    date: "Mar 28, 2025",
+    readTime: "11 min read",
+    image: blogCrmSales,
+    content: "Sales teams lose more business due to poor follow-ups than poor leads. Most companies focus on getting more enquiries but forget the most important part: Consistent follow-ups convert leads into revenue."
   }
 ];
 
@@ -713,8 +734,446 @@ const BlogPost = () => {
                   </ul>
                   <p>This is how businesses achieve near 100% stock accuracy and drastically reduce losses.</p>
                 </>
+              ) : id === "8" ? (
+                // ERP Procurement Blog Post Content
+                <>
+                  <p>
+                    This blog explains how delayed purchase approvals impact your business and how an ERP's automated 
+                    workflow eliminates bottlenecks and speeds up procurement — with real examples and workflow tables.
+                  </p>
+
+                  <h2 className="font-sans text-3xl font-bold mt-12">⭐ The Problem: Slow Purchase Approvals</h2>
+                  <p>In most companies, purchase requests move like this:</p>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>User raises a requisition</li>
+                    <li>Manager must approve</li>
+                    <li>Finance must review budget</li>
+                    <li>Procurement must verify vendor</li>
+                    <li>Final authority must sign off</li>
+                  </ul>
+                  <p>Each step depends on people checking emails manually, causing delays.</p>
+
+                  <p className="font-semibold mt-4">Common issues:</p>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>Request pending in someone's inbox</li>
+                    <li>Manager traveling or busy</li>
+                    <li>No visibility on who should approve next</li>
+                    <li>Paper-based or Excel-based approvals</li>
+                    <li>Mismatch between budget and actual needs</li>
+                    <li>No reminders or escalation</li>
+                    <li>Approvals happen only when people "find time"</li>
+                  </ul>
+
+                  <p className="font-semibold mt-4">The result?</p>
+                  <ul className="space-y-2 text-destructive font-semibold">
+                    <li>👉 Material delivery delays</li>
+                    <li>👉 Production stoppage</li>
+                    <li>👉 Project cost overruns</li>
+                    <li>👉 Emergency purchases at higher price</li>
+                    <li>👉 Vendor dissatisfaction</li>
+                  </ul>
+
+                  <h2 className="font-sans text-3xl font-bold mt-12">⭐ Live Example: How Delayed Manual Approvals Slow Down Procurement</h2>
+                  <p>Let's consider a company buying 50 units of <strong>Safety Gloves</strong> for a construction site.</p>
+
+                  <div className="overflow-x-auto my-8">
+                    <p className="font-semibold mb-4">📌 Manual Approval Process (No ERP)</p>
+                    <table className="min-w-full border-collapse border border-border">
+                      <thead className="bg-muted">
+                        <tr>
+                          <th className="border border-border px-4 py-2 text-left">Step</th>
+                          <th className="border border-border px-4 py-2 text-left">Activity</th>
+                          <th className="border border-border px-4 py-2 text-left">Person</th>
+                          <th className="border border-border px-4 py-2 text-left">Time Taken</th>
+                          <th className="border border-border px-4 py-2 text-left">Issue</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td className="border border-border px-4 py-2">1</td>
+                          <td className="border border-border px-4 py-2">User submits request on paper/WhatsApp</td>
+                          <td className="border border-border px-4 py-2">Site Supervisor</td>
+                          <td className="border border-border px-4 py-2">Day 1</td>
+                          <td className="border border-border px-4 py-2">Informal, no record</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-border px-4 py-2">2</td>
+                          <td className="border border-border px-4 py-2">Manager reviews the request</td>
+                          <td className="border border-border px-4 py-2">Project Manager</td>
+                          <td className="border border-border px-4 py-2">Day 2</td>
+                          <td className="border border-border px-4 py-2">Manager busy inspecting site</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-border px-4 py-2">3</td>
+                          <td className="border border-border px-4 py-2">Sent to Finance for budget approval</td>
+                          <td className="border border-border px-4 py-2">Accounts Staff</td>
+                          <td className="border border-border px-4 py-2">Day 4</td>
+                          <td className="border border-border px-4 py-2 text-destructive">Email missed; no reminders</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-border px-4 py-2">4</td>
+                          <td className="border border-border px-4 py-2">Sent to Procurement</td>
+                          <td className="border border-border px-4 py-2">Buyer</td>
+                          <td className="border border-border px-4 py-2">Day 6</td>
+                          <td className="border border-border px-4 py-2">Buyer unaware it was approved</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-border px-4 py-2">5</td>
+                          <td className="border border-border px-4 py-2">RFQ sent to vendor</td>
+                          <td className="border border-border px-4 py-2">Buyer</td>
+                          <td className="border border-border px-4 py-2">Day 7</td>
+                          <td className="border border-border px-4 py-2">Vendor takes more time</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-border px-4 py-2">6</td>
+                          <td className="border border-border px-4 py-2">PO created</td>
+                          <td className="border border-border px-4 py-2">Procurement Head</td>
+                          <td className="border border-border px-4 py-2">Day 9</td>
+                          <td className="border border-border px-4 py-2">Late approval</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-border px-4 py-2">7</td>
+                          <td className="border border-border px-4 py-2">Material delivered</td>
+                          <td className="border border-border px-4 py-2">Vendor</td>
+                          <td className="border border-border px-4 py-2">Day 14</td>
+                          <td className="border border-border px-4 py-2 text-destructive font-semibold">Project delayed 5–6 days</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p className="mt-4 font-semibold text-destructive">Total Time: 14 Days</p>
+                    <p className="text-muted-foreground">Most of the delay happened between Step 2–5, due to missing visibility.</p>
+                  </div>
+
+                  <h2 className="font-sans text-3xl font-bold mt-12">⭐ How ERP Workflow Automation Speeds Up Purchase Approvals</h2>
+                  <p>An ERP automates the entire approval chain using:</p>
+                  <ul className="space-y-2 text-primary font-semibold">
+                    <li>✔ Configurable approval rules</li>
+                    <li>✔ Email + mobile app notifications</li>
+                    <li>✔ Auto-reminders</li>
+                    <li>✔ Auto-escalations</li>
+                    <li>✔ On-the-go approvals</li>
+                    <li>✔ Real-time tracking</li>
+                    <li>✔ Role-based confirmation levels</li>
+                    <li>✔ Integrated procurement & finance workflow</li>
+                  </ul>
+
+                  <h2 className="font-sans text-3xl font-bold mt-12">⭐ ERP-Based Automated Approval Workflow</h2>
+                  <p><strong>Item:</strong> Safety Gloves (50 units) | <strong>Requester:</strong> Site Supervisor | <strong>Budget Limit:</strong> ₹5,000</p>
+
+                  <div className="overflow-x-auto my-8">
+                    <p className="font-semibold mb-4">1️⃣ User Creates Purchase Request (PR)</p>
+                    <table className="min-w-full border-collapse border border-border">
+                      <thead className="bg-muted">
+                        <tr>
+                          <th className="border border-border px-4 py-2 text-left">Field</th>
+                          <th className="border border-border px-4 py-2 text-left">Value</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr><td className="border border-border px-4 py-2">Requested By</td><td className="border border-border px-4 py-2">Site Supervisor</td></tr>
+                        <tr><td className="border border-border px-4 py-2">Item</td><td className="border border-border px-4 py-2">Safety Gloves</td></tr>
+                        <tr><td className="border border-border px-4 py-2">Qty</td><td className="border border-border px-4 py-2">50</td></tr>
+                        <tr><td className="border border-border px-4 py-2">Estimated Amount</td><td className="border border-border px-4 py-2">₹4,500</td></tr>
+                        <tr><td className="border border-border px-4 py-2">Status</td><td className="border border-border px-4 py-2 text-primary">Pending Approval</td></tr>
+                      </tbody>
+                    </table>
+                    <p className="mt-2 text-muted-foreground">➡ Automatically goes to Project Manager | ➡ Mobile notification sent instantly</p>
+                  </div>
+
+                  <div className="overflow-x-auto my-8">
+                    <p className="font-semibold mb-4">2️⃣ Manager Approval (Instant)</p>
+                    <table className="min-w-full border-collapse border border-border">
+                      <thead className="bg-muted">
+                        <tr>
+                          <th className="border border-border px-4 py-2 text-left">Approver</th>
+                          <th className="border border-border px-4 py-2 text-left">Action</th>
+                          <th className="border border-border px-4 py-2 text-left">Time Taken</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td className="border border-border px-4 py-2">Project Manager</td>
+                          <td className="border border-border px-4 py-2 text-primary">Approved</td>
+                          <td className="border border-border px-4 py-2">Same day (5 min)</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p className="mt-2 text-muted-foreground">➡ Auto-routed to Finance</p>
+                  </div>
+
+                  <div className="overflow-x-auto my-8">
+                    <p className="font-semibold mb-4">3️⃣ Finance Budget Check</p>
+                    <table className="min-w-full border-collapse border border-border">
+                      <thead className="bg-muted">
+                        <tr>
+                          <th className="border border-border px-4 py-2 text-left">Field</th>
+                          <th className="border border-border px-4 py-2 text-left">Value</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr><td className="border border-border px-4 py-2">Budget Available</td><td className="border border-border px-4 py-2">₹25,000</td></tr>
+                        <tr><td className="border border-border px-4 py-2">PR Amount</td><td className="border border-border px-4 py-2">₹4,500</td></tr>
+                        <tr><td className="border border-border px-4 py-2">Status</td><td className="border border-border px-4 py-2 text-primary">Approved</td></tr>
+                      </tbody>
+                    </table>
+                    <p className="mt-2 text-muted-foreground">➡ Auto-routed to Procurement Team | ➡ Notification sent immediately</p>
+                  </div>
+
+                  <h2 className="font-sans text-3xl font-bold mt-12">⭐ Before vs After Comparison</h2>
+                  <div className="overflow-x-auto my-8">
+                    <table className="min-w-full border-collapse border border-border">
+                      <thead className="bg-muted">
+                        <tr>
+                          <th className="border border-border px-4 py-2 text-left">Process Step</th>
+                          <th className="border border-border px-4 py-2 text-left">Manual System</th>
+                          <th className="border border-border px-4 py-2 text-left">ERP Workflow</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr><td className="border border-border px-4 py-2">Request creation</td><td className="border border-border px-4 py-2">Paper/Excel</td><td className="border border-border px-4 py-2 text-primary">Digital PR</td></tr>
+                        <tr><td className="border border-border px-4 py-2">Approval movement</td><td className="border border-border px-4 py-2">Email/WhatsApp</td><td className="border border-border px-4 py-2 text-primary">Auto-routed</td></tr>
+                        <tr><td className="border border-border px-4 py-2">Follow-up</td><td className="border border-border px-4 py-2">Manual calls</td><td className="border border-border px-4 py-2 text-primary">Auto-reminders</td></tr>
+                        <tr><td className="border border-border px-4 py-2">Finance budget check</td><td className="border border-border px-4 py-2">Manual Excel</td><td className="border border-border px-4 py-2 text-primary">Auto-budget validation</td></tr>
+                        <tr><td className="border border-border px-4 py-2">PO approval</td><td className="border border-border px-4 py-2">Manual signature</td><td className="border border-border px-4 py-2 text-primary">Mobile approval</td></tr>
+                        <tr><td className="border border-border px-4 py-2">Tracking</td><td className="border border-border px-4 py-2">None</td><td className="border border-border px-4 py-2 text-primary">Real-time status</td></tr>
+                        <tr><td className="border border-border px-4 py-2">Escalation</td><td className="border border-border px-4 py-2">Missing</td><td className="border border-border px-4 py-2 text-primary">Auto-escalation</td></tr>
+                        <tr><td className="border border-border px-4 py-2 font-semibold">Lead time</td><td className="border border-border px-4 py-2 text-destructive font-semibold">10–14 days</td><td className="border border-border px-4 py-2 text-primary font-semibold">3–4 days</td></tr>
+                      </tbody>
+                    </table>
+                    <p className="mt-4 text-primary font-semibold">➡ ERP reduces approval time by 70–80%</p>
+                  </div>
+
+                  <h2 className="font-sans text-3xl font-bold mt-12">⭐ Key ERP Features That Speed Up Procurement</h2>
+                  <ul className="space-y-4 text-muted-foreground">
+                    <li><strong className="text-foreground">✔ Multi-level approval workflow</strong> — Define rules like: Manager approval up to ₹25,000, Finance above ₹25,000, Director above ₹1,00,000</li>
+                    <li><strong className="text-foreground">✔ Mobile approvals</strong> — Managers approve on the go — no delays</li>
+                    <li><strong className="text-foreground">✔ Auto reminders & escalations</strong> — If an approver does not respond in X hours: Reminder sent → Escalated to next authority</li>
+                    <li><strong className="text-foreground">✔ Budget control & validation</strong> — System blocks PRs exceeding allocated budget</li>
+                    <li><strong className="text-foreground">✔ Vendor portal + automated RFQ</strong> — Vendors receive RFQ and quote online</li>
+                    <li><strong className="text-foreground">✔ Complete audit trail</strong> — Every approval, change, comment is logged</li>
+                  </ul>
+
+                  <h2 className="font-sans text-3xl font-bold mt-12">⭐ Real Business Impact</h2>
+                  <p>After implementing ERP workflow automation, companies experience:</p>
+                  <ul className="space-y-2 text-primary font-semibold">
+                    <li>✔ 50–80% faster procurement cycle</li>
+                    <li>✔ Zero lost requests</li>
+                    <li>✔ Zero email follow-up</li>
+                    <li>✔ Avoid emergency purchases</li>
+                    <li>✔ Better vendor relationships</li>
+                    <li>✔ Lower material cost</li>
+                    <li>✔ Faster project completion</li>
+                    <li>✔ On-time production</li>
+                  </ul>
+                  <p>Procurement becomes smooth, transparent, and 100% trackable.</p>
+
+                  <h2 className="font-sans text-3xl font-bold mt-12">⭐ Conclusion</h2>
+                  <p>Delayed approvals are one of the biggest silent bottlenecks in procurement. ERP workflow automation eliminates these delays through smart routing, instant notifications, mobile approvals, and complete visibility.</p>
+                  <ul className="space-y-2 text-primary font-semibold mt-4">
+                    <li>✔ Faster approvals</li>
+                    <li>✔ Faster procurement</li>
+                    <li>✔ Faster delivery</li>
+                    <li>✔ Higher productivity</li>
+                    <li>✔ Lower cost</li>
+                  </ul>
+                  <p>Your entire supply chain becomes faster and more reliable.</p>
+                </>
+              ) : id === "9" ? (
+                // CRM Sales Blog Post Content
+                <>
+                  <p>
+                    But when follow-ups are done manually using WhatsApp, Excel sheets, notebooks, and memory — leads slip through the cracks. 
+                    This is where an ERP-integrated CRM transforms the entire sales pipeline.
+                  </p>
+
+                  <h2 className="font-sans text-3xl font-bold mt-12">⭐ The Problem: Manual Follow-ups = Lost Revenue</h2>
+                  <p className="font-semibold">Salespeople struggle with:</p>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>Forgetting to call leads</li>
+                    <li>No reminder system</li>
+                    <li>No central place to see all leads</li>
+                    <li>Follow-up dates written in notebooks</li>
+                    <li>Leads scattered across WhatsApp, Gmail, Excel</li>
+                    <li>Missed hot leads because salesperson is busy</li>
+                    <li>No visibility for managers</li>
+                    <li>No measurement of follow-up quality</li>
+                  </ul>
+
+                  <p className="font-semibold mt-4">Result?</p>
+                  <ul className="space-y-2 text-destructive font-semibold">
+                    <li>❌ Delayed responses</li>
+                    <li>❌ Missed opportunities</li>
+                    <li>❌ Competitors close first</li>
+                    <li>❌ Drop in conversion rate</li>
+                    <li>❌ No forecasting accuracy</li>
+                  </ul>
+                  <p className="font-semibold mt-4">Businesses lose 30–50% of potential sales only due to poor follow-ups.</p>
+
+                  <h2 className="font-sans text-3xl font-bold mt-12">⭐ Live Example: How Manual Follow-ups Cause Lost Sales</h2>
+                  <p>Let's take a company selling <strong>Industrial Air Compressors</strong>.</p>
+
+                  <div className="overflow-x-auto my-8">
+                    <p className="font-semibold mb-4">📌 Manual Follow-up Flow (No ERP CRM)</p>
+                    <table className="min-w-full border-collapse border border-border">
+                      <thead className="bg-muted">
+                        <tr>
+                          <th className="border border-border px-4 py-2 text-left">Step</th>
+                          <th className="border border-border px-4 py-2 text-left">Activity</th>
+                          <th className="border border-border px-4 py-2 text-left">Problem</th>
+                          <th className="border border-border px-4 py-2 text-left">Result</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr><td className="border border-border px-4 py-2">1</td><td className="border border-border px-4 py-2">Lead comes from website</td><td className="border border-border px-4 py-2">Entered manually in Excel</td><td className="border border-border px-4 py-2">Often delayed</td></tr>
+                        <tr><td className="border border-border px-4 py-2">2</td><td className="border border-border px-4 py-2">Salesperson calls customer</td><td className="border border-border px-4 py-2">Notes saved on WhatsApp</td><td className="border border-border px-4 py-2">No central history</td></tr>
+                        <tr><td className="border border-border px-4 py-2">3</td><td className="border border-border px-4 py-2">Follow-up date noted on paper</td><td className="border border-border px-4 py-2">Easy to forget</td><td className="border border-border px-4 py-2 text-destructive">Missed follow-up</td></tr>
+                        <tr><td className="border border-border px-4 py-2">4</td><td className="border border-border px-4 py-2">Customer calls again asking for quote</td><td className="border border-border px-4 py-2">Salesperson busy</td><td className="border border-border px-4 py-2">Slow response</td></tr>
+                        <tr><td className="border border-border px-4 py-2">5</td><td className="border border-border px-4 py-2">Manager checks status</td><td className="border border-border px-4 py-2">No visibility</td><td className="border border-border px-4 py-2">Cannot guide</td></tr>
+                        <tr><td className="border border-border px-4 py-2">6</td><td className="border border-border px-4 py-2">Lead turns cold</td><td className="border border-border px-4 py-2">No reminders</td><td className="border border-border px-4 py-2 text-destructive font-semibold">Lost opportunity</td></tr>
+                      </tbody>
+                    </table>
+                    <p className="mt-4 text-muted-foreground">Conversion rate: ~20–25% | The main reason: Follow-ups are inconsistent and depend on individual memory.</p>
+                  </div>
+
+                  <h2 className="font-sans text-3xl font-bold mt-12">⭐ How ERP CRM Fixes the Problem — With Automation</h2>
+                  <p>An ERP-integrated CRM centralizes customer interaction, automates reminders, and improves salesperson efficiency.</p>
+
+                  <div className="overflow-x-auto my-8">
+                    <p className="font-semibold mb-4">📌 Lead Enters the CRM Automatically</p>
+                    <table className="min-w-full border-collapse border border-border">
+                      <thead className="bg-muted">
+                        <tr>
+                          <th className="border border-border px-4 py-2 text-left">Source</th>
+                          <th className="border border-border px-4 py-2 text-left">Action</th>
+                          <th className="border border-border px-4 py-2 text-left">ERP CRM Result</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr><td className="border border-border px-4 py-2">Website Form</td><td className="border border-border px-4 py-2">Auto-captured</td><td className="border border-border px-4 py-2 text-primary">Lead created instantly</td></tr>
+                        <tr><td className="border border-border px-4 py-2">WhatsApp</td><td className="border border-border px-4 py-2">Integrated</td><td className="border border-border px-4 py-2 text-primary">Message logged in CRM</td></tr>
+                        <tr><td className="border border-border px-4 py-2">Email</td><td className="border border-border px-4 py-2">Auto-sync</td><td className="border border-border px-4 py-2 text-primary">Lead auto-created</td></tr>
+                        <tr><td className="border border-border px-4 py-2">Phone Call</td><td className="border border-border px-4 py-2">Click-to-call integration</td><td className="border border-border px-4 py-2 text-primary">Call history stored</td></tr>
+                      </tbody>
+                    </table>
+                    <p className="mt-2 text-muted-foreground">CRM assigns the lead to a salesperson automatically based on rules.</p>
+                  </div>
+
+                  <div className="overflow-x-auto my-8">
+                    <p className="font-semibold mb-4">1️⃣ CRM Follow-up Task Automatically Created</p>
+                    <table className="min-w-full border-collapse border border-border">
+                      <thead className="bg-muted">
+                        <tr>
+                          <th className="border border-border px-4 py-2 text-left">Field</th>
+                          <th className="border border-border px-4 py-2 text-left">Value</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr><td className="border border-border px-4 py-2">Lead Name</td><td className="border border-border px-4 py-2">Mr. Arvind</td></tr>
+                        <tr><td className="border border-border px-4 py-2">Product</td><td className="border border-border px-4 py-2">Industrial Air Compressor</td></tr>
+                        <tr><td className="border border-border px-4 py-2">Lead Score</td><td className="border border-border px-4 py-2 text-primary font-semibold">Hot</td></tr>
+                        <tr><td className="border border-border px-4 py-2">Next Follow-up</td><td className="border border-border px-4 py-2">Auto-set in 24 hours</td></tr>
+                        <tr><td className="border border-border px-4 py-2">Assigned To</td><td className="border border-border px-4 py-2">Salesperson – Ravi</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div className="overflow-x-auto my-8">
+                    <p className="font-semibold mb-4">5️⃣ Manager Dashboard — Real-Time Visibility</p>
+                    <table className="min-w-full border-collapse border border-border">
+                      <thead className="bg-muted">
+                        <tr>
+                          <th className="border border-border px-4 py-2 text-left">Metric</th>
+                          <th className="border border-border px-4 py-2 text-left">Value</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr><td className="border border-border px-4 py-2">New Leads Today</td><td className="border border-border px-4 py-2">18</td></tr>
+                        <tr><td className="border border-border px-4 py-2">Follow-ups Pending</td><td className="border border-border px-4 py-2">3</td></tr>
+                        <tr><td className="border border-border px-4 py-2">Hot Leads</td><td className="border border-border px-4 py-2 text-primary font-semibold">9</td></tr>
+                        <tr><td className="border border-border px-4 py-2">Conversion Rate</td><td className="border border-border px-4 py-2 text-primary font-semibold">38%</td></tr>
+                        <tr><td className="border border-border px-4 py-2">Sales Pipeline Value</td><td className="border border-border px-4 py-2">₹58,00,000</td></tr>
+                      </tbody>
+                    </table>
+                    <p className="mt-2 text-muted-foreground">Manager can instantly see if a salesperson is missing follow-ups.</p>
+                  </div>
+
+                  <h2 className="font-sans text-3xl font-bold mt-12">⭐ Before vs After — Conversion Rate Improvement</h2>
+                  <div className="overflow-x-auto my-8">
+                    <table className="min-w-full border-collapse border border-border">
+                      <thead className="bg-muted">
+                        <tr>
+                          <th className="border border-border px-4 py-2 text-left">Parameter</th>
+                          <th className="border border-border px-4 py-2 text-left">Manual Follow-ups</th>
+                          <th className="border border-border px-4 py-2 text-left">ERP CRM Follow-ups</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr><td className="border border-border px-4 py-2">Response Time</td><td className="border border-border px-4 py-2">Slow</td><td className="border border-border px-4 py-2 text-primary">Instant</td></tr>
+                        <tr><td className="border border-border px-4 py-2">Follow-up Tracking</td><td className="border border-border px-4 py-2">None</td><td className="border border-border px-4 py-2 text-primary">Automated</td></tr>
+                        <tr><td className="border border-border px-4 py-2">Lead Assignment</td><td className="border border-border px-4 py-2">Manual</td><td className="border border-border px-4 py-2 text-primary">Rules-based auto-assign</td></tr>
+                        <tr><td className="border border-border px-4 py-2">Reminder System</td><td className="border border-border px-4 py-2">None</td><td className="border border-border px-4 py-2 text-primary">Built-in</td></tr>
+                        <tr><td className="border border-border px-4 py-2">Manager Visibility</td><td className="border border-border px-4 py-2">Zero</td><td className="border border-border px-4 py-2 text-primary">Full dashboard</td></tr>
+                        <tr><td className="border border-border px-4 py-2">Lead Leakages</td><td className="border border-border px-4 py-2 text-destructive">High</td><td className="border border-border px-4 py-2 text-primary">Zero</td></tr>
+                        <tr><td className="border border-border px-4 py-2 font-semibold">Conversion Rate</td><td className="border border-border px-4 py-2 text-destructive font-semibold">20–25%</td><td className="border border-border px-4 py-2 text-primary font-semibold">35–40%</td></tr>
+                        <tr><td className="border border-border px-4 py-2">Salesperson Efficiency</td><td className="border border-border px-4 py-2">Low</td><td className="border border-border px-4 py-2 text-primary">High</td></tr>
+                        <tr><td className="border border-border px-4 py-2">Customer Experience</td><td className="border border-border px-4 py-2">Poor</td><td className="border border-border px-4 py-2 text-primary">Professional</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <h2 className="font-sans text-3xl font-bold mt-12">⭐ Why ERP CRM Improves Conversions by 40%</h2>
+                  <p>Because it ensures:</p>
+                  <ul className="space-y-2 text-primary font-semibold">
+                    <li>✔ No follow-up is ever missed</li>
+                    <li>✔ Real-time lead insights</li>
+                    <li>✔ Proper qualification & scoring</li>
+                    <li>✔ Faster proposals & responses</li>
+                    <li>✔ Automatic nurturing</li>
+                    <li>✔ Complete lead history</li>
+                    <li>✔ Manager monitoring</li>
+                    <li>✔ Standard communication templates</li>
+                    <li>✔ Multiple touch-points (email/WhatsApp/SMS)</li>
+                  </ul>
+                  <p className="font-semibold mt-4">CRM = Automation + Visibility + Consistency</p>
+                  <p>And consistency drives conversion.</p>
+
+                  <h2 className="font-sans text-3xl font-bold mt-12">⭐ Real Case Study: CRM Success</h2>
+                  <p className="font-semibold">Company: Industrial Equipment Supplier</p>
+                  
+                  <p className="font-semibold mt-4">Before CRM:</p>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>❌ Leads stored in Excel</li>
+                    <li>❌ Conversion rate: 22%</li>
+                    <li>❌ Follow-ups inconsistent</li>
+                  </ul>
+
+                  <p className="font-semibold mt-4">After ERP CRM:</p>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>✔ Auto-captured leads</li>
+                    <li>✔ Automated follow-ups</li>
+                    <li>✔ Manager dashboard</li>
+                    <li>✔ WhatsApp + Email integration</li>
+                  </ul>
+
+                  <p className="font-semibold mt-4">Final Result:</p>
+                  <ul className="space-y-2 text-primary font-semibold">
+                    <li>🚀 Conversion rate increased to 41%</li>
+                    <li>🚀 Lead leakage reduced to 0%</li>
+                    <li>🚀 Faster response = happier customers</li>
+                  </ul>
+
+                  <h2 className="font-sans text-3xl font-bold mt-12">⭐ Conclusion</h2>
+                  <p>Manual follow-ups are the biggest hidden reason for low sales performance. An ERP-integrated CRM transforms the process by:</p>
+                  <ul className="space-y-2 text-primary font-semibold">
+                    <li>✔ Automating follow-ups</li>
+                    <li>✔ Ensuring timely reminders</li>
+                    <li>✔ Enabling mobile-based tracking</li>
+                    <li>✔ Improving manager visibility</li>
+                    <li>✔ Boosting salesperson productivity</li>
+                  </ul>
+                  <p>That's why companies using CRM report 40% higher conversion rates and far better customer experience.</p>
+                </>
               ) : (
-                // Default blog post content (for other posts)
                 <>
                   <h2 className="font-sans text-3xl font-bold mt-12">The Philosophy Behind Minimalism</h2>
                   <p>
@@ -756,51 +1215,15 @@ const BlogPost = () => {
             </div>
           </div>
 
-          {/* Social Share Section */}
+          {/* Author Signature */}
           <div className="mt-16 pt-8 border-t border-border">
-            <div className="flex items-center justify-between flex-wrap gap-4">
-              <div className="flex items-center gap-2 text-muted-foreground">
-                <Share2 className="h-5 w-5" />
-                <span className="font-medium">Share this article</span>
-              </div>
-              <div className="flex gap-3">
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={handleCopyLink}
-                  className="hover:bg-primary hover:text-primary-foreground transition-colors"
-                  aria-label="Copy link"
-                >
-                  {isCopied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-                </Button>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={() => handleShare('twitter')}
-                  className="hover:bg-[#1DA1F2] hover:text-white hover:border-[#1DA1F2] transition-colors"
-                  aria-label="Share on Twitter"
-                >
-                  <Twitter className="h-4 w-4" />
-                </Button>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={() => handleShare('linkedin')}
-                  className="hover:bg-[#0A66C2] hover:text-white hover:border-[#0A66C2] transition-colors"
-                  aria-label="Share on LinkedIn"
-                >
-                  <Linkedin className="h-4 w-4" />
-                </Button>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={() => handleShare('facebook')}
-                  className="hover:bg-[#1877F2] hover:text-white hover:border-[#1877F2] transition-colors"
-                  aria-label="Share on Facebook"
-                >
-                  <Facebook className="h-4 w-4" />
-                </Button>
-              </div>
+            <div className="flex flex-col items-end">
+              <img 
+                src={signature} 
+                alt="Ganapathyram Signature" 
+                className="h-16 md:h-20 object-contain dark:invert"
+              />
+              <p className="text-muted-foreground text-sm mt-2">Ganapathyram Nandhagopal</p>
             </div>
           </div>
 
