@@ -1221,9 +1221,9 @@ const BlogPost = () => {
               <img 
                 src={signature} 
                 alt="Ganapathyram Signature" 
-                className="h-16 md:h-20 object-contain dark:invert"
+                className="h-8 md:h-10 object-contain dark:invert"
               />
-              <p className="text-muted-foreground text-sm mt-2">Ganapathyram Nandhagopal</p>
+              <p className="text-muted-foreground text-sm mt-1">Ganapathyram Nandhagopal</p>
             </div>
           </div>
 
