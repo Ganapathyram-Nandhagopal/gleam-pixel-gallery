@@ -9,72 +9,12 @@ import { ArrowLeft, Heart, MessageCircle, Send, Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import blogMinimalist from "@/assets/blog-minimalist-branded.png";
-import blogDesignSystems from "@/assets/blog-design-systems-branded.png";
-import blogColorPsychology from "@/assets/blog-color-psychology-branded.png";
-import blogMicrointeractions from "@/assets/blog-microinteractions-branded.png";
-import blogAccessibility from "@/assets/blog-accessibility-branded.png";
-import blogAiDesign from "@/assets/blog-ai-design-branded.png";
 import blogErpInventory from "@/assets/blog-erp-inventory-branded.png";
 import blogErpProcurement from "@/assets/blog-erp-procurement.png";
 import blogCrmSales from "@/assets/blog-crm-sales-branded.png";
 import signature from "@/assets/signature.png";
 
 const blogPostsData = [
-  {
-    id: "1",
-    title: "The Art of Minimalist Design",
-    category: "Design Theory",
-    date: "Mar 15, 2025",
-    readTime: "5 min read",
-    image: blogMinimalist,
-    content: "Minimalist design is more than just removing elements—it's about finding the perfect balance between form and function, creating experiences that feel effortless and intuitive."
-  },
-  {
-    id: "2",
-    title: "Building Design Systems That Scale",
-    category: "Design Systems",
-    date: "Mar 10, 2025",
-    readTime: "8 min read",
-    image: blogDesignSystems,
-    content: "A comprehensive guide to creating consistent, maintainable design systems for growing products."
-  },
-  {
-    id: "3",
-    title: "Color Psychology in UI Design",
-    category: "UI Design",
-    date: "Mar 5, 2025",
-    readTime: "6 min read",
-    image: blogColorPsychology,
-    content: "Understanding how colors influence user behavior and emotional responses in digital interfaces."
-  },
-  {
-    id: "4",
-    title: "Microinteractions That Delight",
-    category: "UX Design",
-    date: "Feb 28, 2025",
-    readTime: "4 min read",
-    image: blogMicrointeractions,
-    content: "Small details that make a big difference in user experience and product satisfaction."
-  },
-  {
-    id: "5",
-    title: "Designing for Accessibility",
-    category: "Accessibility",
-    date: "Feb 20, 2025",
-    readTime: "7 min read",
-    image: blogAccessibility,
-    content: "Creating inclusive digital experiences that work for everyone, regardless of ability."
-  },
-  {
-    id: "6",
-    title: "The Future of AI in Design",
-    category: "Technology",
-    date: "Feb 15, 2025",
-    readTime: "10 min read",
-    image: blogAiDesign,
-    content: "How artificial intelligence is transforming the design process and what it means for creators."
-  },
   {
     id: "7",
     title: "Inventory Mismatch & Stock Losses — How ERP Brings 100% Stock Accuracy",
