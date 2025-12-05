@@ -165,7 +165,7 @@ const Contact = () => {
               </p>
               <div className="w-full mx-auto overflow-hidden rounded-xl sm:rounded-2xl border shadow-lg">
                 <iframe
-                  src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ16-lrn9WUNXCyRbFkCelSzD-4953UiRIX-cf0NZx_AbIop0Tc8hLzdZZweAdvjyXm37fvHBcM3?gv=true"
+                  src="https://cal.com/ganapathy"
                   style={{ border: 0, display: 'block' }}
                   width="100%"
                   height="600"
