@@ -12,7 +12,7 @@ import blogMicrointeractions from "@/assets/blog-microinteractions.jpg";
 import blogAccessibility from "@/assets/blog-accessibility.jpg";
 import blogAiDesign from "@/assets/blog-ai-design.jpg";
 import blogErpInventory from "@/assets/blog-erp-inventory.jpg";
-import blogErpProcurement from "@/assets/blog-erp-procurement.jpg";
+import blogErpProcurement from "@/assets/blog-erp-procurement.png";
 import blogCrmSales from "@/assets/blog-crm-sales.jpg";
 
 const blogPosts = [
