@@ -16,7 +16,7 @@ import blogMicrointeractions from "@/assets/blog-microinteractions.jpg";
 import blogAccessibility from "@/assets/blog-accessibility.jpg";
 import blogAiDesign from "@/assets/blog-ai-design.jpg";
 import blogErpInventory from "@/assets/blog-erp-inventory.jpg";
-import blogErpProcurement from "@/assets/blog-erp-procurement.jpg";
+import blogErpProcurement from "@/assets/blog-erp-procurement.png";
 import blogCrmSales from "@/assets/blog-crm-sales.jpg";
 import signature from "@/assets/signature.png";
 
@@ -148,6 +148,54 @@ const BlogPost = () => {
       })));
     }
   }, [id]);
+
+  // Update Open Graph meta tags for social sharing
+  useEffect(() => {
+    const baseUrl = window.location.origin;
+    const imageUrl = `${baseUrl}${currentPost.image}`;
+    const pageUrl = `${baseUrl}/blog/${currentPost.id}`;
+    
+    // Update title
+    document.title = `${currentPost.title} | Ganapathyram Nandhagopal`;
+    
+    // Update or create meta tags
+    const updateMetaTag = (property: string, content: string) => {
+      let meta = document.querySelector(`meta[property="${property}"]`) as HTMLMetaElement;
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute('property', property);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute('content', content);
+    };
+    
+    const updateMetaName = (name: string, content: string) => {
+      let meta = document.querySelector(`meta[name="${name}"]`) as HTMLMetaElement;
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute('name', name);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute('content', content);
+    };
+    
+    // Open Graph tags
+    updateMetaTag('og:title', currentPost.title);
+    updateMetaTag('og:description', currentPost.content);
+    updateMetaTag('og:image', imageUrl);
+    updateMetaTag('og:url', pageUrl);
+    updateMetaTag('og:type', 'article');
+    
+    // Twitter Card tags
+    updateMetaName('twitter:card', 'summary_large_image');
+    updateMetaName('twitter:title', currentPost.title);
+    updateMetaName('twitter:description', currentPost.content);
+    updateMetaName('twitter:image', imageUrl);
+    
+    return () => {
+      document.title = 'Ganapathyram Nandhagopal | ERPNext Freelancer & ERP Functional Consultant';
+    };
+  }, [currentPost]);
 
   useEffect(() => {
     setIsTransitioning(true);
