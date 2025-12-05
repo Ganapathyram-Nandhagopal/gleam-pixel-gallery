@@ -5,71 +5,11 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import blogMinimalist from "@/assets/blog-minimalist-branded.png";
-import blogDesignSystems from "@/assets/blog-design-systems-branded.png";
-import blogColorPsychology from "@/assets/blog-color-psychology-branded.png";
-import blogMicrointeractions from "@/assets/blog-microinteractions-branded.png";
-import blogAccessibility from "@/assets/blog-accessibility-branded.png";
-import blogAiDesign from "@/assets/blog-ai-design-branded.png";
 import blogErpInventory from "@/assets/blog-erp-inventory-branded.png";
 import blogErpProcurement from "@/assets/blog-erp-procurement.png";
 import blogCrmSales from "@/assets/blog-crm-sales-branded.png";
 
 const blogPosts = [
-  {
-    id: 1,
-    title: "The Art of Minimalist Design",
-    excerpt: "Exploring how less is more in creating impactful digital experiences that resonate with users.",
-    category: "Design Theory",
-    date: "Mar 15, 2025",
-    readTime: "5 min read",
-    image: blogMinimalist,
-  },
-  {
-    id: 2,
-    title: "Building Design Systems That Scale",
-    excerpt: "A comprehensive guide to creating consistent, maintainable design systems for growing products.",
-    category: "Design Systems",
-    date: "Mar 10, 2025",
-    readTime: "8 min read",
-    image: blogDesignSystems,
-  },
-  {
-    id: 3,
-    title: "Color Psychology in UI Design",
-    excerpt: "Understanding how colors influence user behavior and emotional responses in digital interfaces.",
-    category: "UI Design",
-    date: "Mar 5, 2025",
-    readTime: "6 min read",
-    image: blogColorPsychology,
-  },
-  {
-    id: 4,
-    title: "Microinteractions That Delight",
-    excerpt: "Small details that make a big difference in user experience and product satisfaction.",
-    category: "UX Design",
-    date: "Feb 28, 2025",
-    readTime: "4 min read",
-    image: blogMicrointeractions,
-  },
-  {
-    id: 5,
-    title: "Designing for Accessibility",
-    excerpt: "Creating inclusive digital experiences that work for everyone, regardless of ability.",
-    category: "Accessibility",
-    date: "Feb 20, 2025",
-    readTime: "7 min read",
-    image: blogAccessibility,
-  },
-  {
-    id: 6,
-    title: "The Future of AI in Design",
-    excerpt: "How artificial intelligence is transforming the design process and what it means for creators.",
-    category: "Technology",
-    date: "Feb 15, 2025",
-    readTime: "10 min read",
-    image: blogAiDesign,
-  },
   {
     id: 7,
     title: "Inventory Mismatch & Stock Losses — How ERP Brings 100% Stock Accuracy",
@@ -116,10 +56,10 @@ const Blog = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 sm:mb-16 space-y-4 animate-fade-in">
             <h1 className="font-sans text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
-              Design <span className="gradient-text">Insights</span>
+              Business <span className="gradient-text">Insights</span>
             </h1>
             <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-              Thoughts, ideas, and lessons learned from years of crafting digital experiences
+              Practical insights on ERP implementation and business process optimization
             </p>
           </div>
 
