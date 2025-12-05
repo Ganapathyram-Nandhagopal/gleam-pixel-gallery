@@ -9,15 +9,15 @@ import { ArrowLeft, Heart, MessageCircle, Send, Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import blogMinimalist from "@/assets/blog-minimalist.jpg";
-import blogDesignSystems from "@/assets/blog-design-systems.jpg";
-import blogColorPsychology from "@/assets/blog-color-psychology.jpg";
-import blogMicrointeractions from "@/assets/blog-microinteractions.jpg";
-import blogAccessibility from "@/assets/blog-accessibility.jpg";
-import blogAiDesign from "@/assets/blog-ai-design.jpg";
-import blogErpInventory from "@/assets/blog-erp-inventory.jpg";
+import blogMinimalist from "@/assets/blog-minimalist-branded.png";
+import blogDesignSystems from "@/assets/blog-design-systems-branded.png";
+import blogColorPsychology from "@/assets/blog-color-psychology-branded.png";
+import blogMicrointeractions from "@/assets/blog-microinteractions-branded.png";
+import blogAccessibility from "@/assets/blog-accessibility-branded.png";
+import blogAiDesign from "@/assets/blog-ai-design-branded.png";
+import blogErpInventory from "@/assets/blog-erp-inventory-branded.png";
 import blogErpProcurement from "@/assets/blog-erp-procurement.png";
-import blogCrmSales from "@/assets/blog-crm-sales.jpg";
+import blogCrmSales from "@/assets/blog-crm-sales-branded.png";
 import signature from "@/assets/signature.png";
 
 const blogPostsData = [
