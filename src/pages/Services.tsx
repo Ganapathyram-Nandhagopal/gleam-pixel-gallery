@@ -166,11 +166,11 @@ const Services = () => {
           </Card>
 
           {/* Our Process Section */}
-          <div className="mt-20 sm:mt-24 text-center">
-            <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+          <div className="mt-20 sm:mt-24 text-center animate-fade-in">
+            <h2 className="font-sans text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6">
               Our <span className="gradient-text">Process</span>
             </h2>
-            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-12">
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-12 sm:mb-16">
               A proven approach to delivering exceptional results
             </p>
             
