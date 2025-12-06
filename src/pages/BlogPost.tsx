@@ -9,9 +9,9 @@ import { ArrowLeft, Heart, MessageCircle, Send, Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import blogErpInventory from "@/assets/blog-erp-inventory-branded.png";
-import blogErpProcurement from "@/assets/blog-erp-procurement.png";
-import blogCrmSales from "@/assets/blog-crm-sales-branded.png";
+import blogInventoryMismatch from "@/assets/blog-inventory-mismatch.png";
+import blogDelayedApprovals from "@/assets/blog-delayed-approvals.png";
+import blogManualSales from "@/assets/blog-manual-sales.png";
 import signature from "@/assets/signature.png";
 
 const blogPostsData = [
@@ -21,7 +21,7 @@ const blogPostsData = [
     category: "ERP & Business",
     date: "Mar 20, 2025",
     readTime: "12 min read",
-    image: blogErpInventory,
+    image: blogInventoryMismatch,
     content: "Inventory mismatch is one of the most common and costly problems businesses face today. Whether you run a trading business, retail shop, manufacturing unit, or distribution company, stock inaccuracy directly impacts profit, customer satisfaction, and cash flow."
   },
   {
@@ -30,7 +30,7 @@ const blogPostsData = [
     category: "ERP & Business",
     date: "Mar 25, 2025",
     readTime: "10 min read",
-    image: blogErpProcurement,
+    image: blogDelayedApprovals,
     content: "In many organizations, purchase approvals take longer than the actual buying process. A request raised by a team member travels through multiple people, waits in inboxes, and often gets stuck due to simple human delays."
   },
   {
@@ -39,7 +39,7 @@ const blogPostsData = [
     category: "ERP & Business",
     date: "Mar 28, 2025",
     readTime: "11 min read",
-    image: blogCrmSales,
+    image: blogManualSales,
     content: "Sales teams lose more business due to poor follow-ups than poor leads. Most companies focus on getting more enquiries but forget the most important part: Consistent follow-ups convert leads into revenue."
   }
 ];

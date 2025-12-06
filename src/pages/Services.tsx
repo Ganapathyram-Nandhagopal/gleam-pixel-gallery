@@ -64,6 +64,13 @@ const Services = () => {
     },
   ];
 
+  const processSteps = [
+    { number: "1", title: "Discovery", description: "Understanding your needs and goals" },
+    { number: "2", title: "Strategy", description: "Planning the perfect solution" },
+    { number: "3", title: "Execution", description: "Bringing your vision to life" },
+    { number: "4", title: "Support", description: "Ongoing maintenance and growth" },
+  ];
+
   const currentService = services[activeService];
 
   return (
@@ -74,8 +81,8 @@ const Services = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-12">
           {/* Header */}
           <div className="text-center mb-12 sm:mb-16 animate-fade-in">
-            <h1 className="font-sans text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 text-foreground">
-              My Services
+            <h1 className="font-sans text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6">
+              My <span className="gradient-text">Services</span>
             </h1>
             <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
               Comprehensive business solutions tailored to transform your operations and drive growth
@@ -157,6 +164,50 @@ const Services = () => {
               </NavLink>
             </CardContent>
           </Card>
+
+          {/* Our Process Section */}
+          <div className="mt-20 sm:mt-24 text-center">
+            <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+              Our <span className="gradient-text">Process</span>
+            </h2>
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-12">
+              A proven approach to delivering exceptional results
+            </p>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+              {processSteps.map((step, index) => (
+                <div 
+                  key={index}
+                  className="flex flex-col items-center p-6 rounded-2xl bg-card border border-border hover:shadow-lg transition-all duration-300 animate-fade-in"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-foreground text-background flex items-center justify-center text-xl sm:text-2xl font-bold mb-4">
+                    {step.number}
+                  </div>
+                  <h3 className="font-semibold text-foreground mb-2">{step.title}</h3>
+                  <p className="text-sm text-muted-foreground text-center">{step.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Ready to Get Started CTA */}
+          <div className="mt-20 sm:mt-24 text-center py-12 sm:py-16 px-6 sm:px-12 rounded-3xl bg-card border border-border animate-fade-in">
+            <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+              Ready to Get <span className="gradient-text">Started?</span>
+            </h2>
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
+              Let's discuss how we can help transform your business with the right technology solutions.
+            </p>
+            <NavLink to="/contact.html">
+              <Button 
+                className="bg-foreground text-background hover:bg-foreground/90 font-medium px-10 py-6 text-lg"
+              >
+                Contact Us Today
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </NavLink>
+          </div>
         </div>
       </main>
 
