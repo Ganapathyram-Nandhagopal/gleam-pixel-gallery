@@ -17,6 +17,7 @@ import signature from "@/assets/signature.png";
 const blogPostsData = [
   {
     id: "7",
+    slug: "inventory-mismatch-stock-losses-erp-stock-accuracy",
     title: "Inventory Mismatch & Stock Losses — How ERP Brings 100% Stock Accuracy",
     category: "ERP & Business",
     date: "Mar 20, 2025",
@@ -26,6 +27,7 @@ const blogPostsData = [
   },
   {
     id: "8",
+    slug: "delayed-purchase-approvals-erp-workflow-automation",
     title: "Delayed Purchase Approvals — How ERP Workflow Automation Speeds Up Procurement",
     category: "ERP & Business",
     date: "Mar 25, 2025",
@@ -35,6 +37,7 @@ const blogPostsData = [
   },
   {
     id: "9",
+    slug: "manual-sales-followups-erp-crm-conversion-rate",
     title: "Manual Sales Follow-ups — How ERP CRM Increases Conversion Rate by 40%",
     category: "ERP & Business",
     date: "Mar 28, 2025",
@@ -54,7 +57,7 @@ interface Comment {
 }
 
 const BlogPost = () => {
-  const { id } = useParams();
+  const { slug } = useParams();
   const { toast } = useToast();
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
@@ -71,15 +74,15 @@ const BlogPost = () => {
   const [email, setEmail] = useState("");
   const [newsletterName, setNewsletterName] = useState("");
   
-  const currentPost = blogPostsData.find(post => post.id === id) || blogPostsData[0];
+  const currentPost = blogPostsData.find(post => post.slug === slug) || blogPostsData[0];
   
   const relatedPosts = blogPostsData
-    .filter(post => post.id !== id)
+    .filter(post => post.slug !== slug)
     .slice(0, 2);
 
   // Load comments from localStorage
   useEffect(() => {
-    const savedComments = localStorage.getItem(`blog-comments-${id}`);
+    const savedComments = localStorage.getItem(`blog-comments-${slug}`);
     if (savedComments) {
       const parsed = JSON.parse(savedComments);
       setComments(parsed.map((c: any) => ({
@@ -87,13 +90,13 @@ const BlogPost = () => {
         timestamp: new Date(c.timestamp)
       })));
     }
-  }, [id]);
+  }, [slug]);
 
   // Update Open Graph meta tags for social sharing
   useEffect(() => {
     const baseUrl = window.location.origin;
     const imageUrl = `${baseUrl}${currentPost.image}`;
-    const pageUrl = `${baseUrl}/blog/${currentPost.id}`;
+    const pageUrl = `${baseUrl}/blog/${currentPost.slug}`;
     
     // Update title
     document.title = `${currentPost.title} | Ganapathyram Nandhagopal`;
@@ -146,7 +149,7 @@ const BlogPost = () => {
     }, 300);
     
     return () => clearTimeout(timer);
-  }, [id]);
+  }, [slug]);
 
   useEffect(() => {
     // Update Open Graph meta tags for social sharing
@@ -154,7 +157,7 @@ const BlogPost = () => {
       { property: 'og:title', content: currentPost.title },
       { property: 'og:description', content: currentPost.content },
       { property: 'og:image', content: `https://ganapathyram.vercel.app${currentPost.image}` },
-      { property: 'og:url', content: `https://ganapathyram.vercel.app/blog/${id}` },
+      { property: 'og:url', content: `https://ganapathyram.vercel.app/blog/${slug}` },
       { property: 'og:type', content: 'article' },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:title', content: currentPost.title },
@@ -179,9 +182,9 @@ const BlogPost = () => {
     });
 
     document.title = `${currentPost.title} | Ganapathyram Nandhagopal`;
-  }, [currentPost, id]);
+  }, [currentPost, slug]);
 
-  const shareUrl = `https://ganapathyram.vercel.app/blog/${id}`;
+  const shareUrl = `https://ganapathyram.vercel.app/blog/${slug}`;
   const shareTitle = currentPost.title;
 
   const handleShare = (platform: string) => {
@@ -239,7 +242,7 @@ const BlogPost = () => {
 
     const updatedComments = [...comments, comment];
     setComments(updatedComments);
-    localStorage.setItem(`blog-comments-${id}`, JSON.stringify(updatedComments));
+    localStorage.setItem(`blog-comments-${slug}`, JSON.stringify(updatedComments));
     
     setNewComment("");
     setNewName("");
@@ -265,7 +268,7 @@ const BlogPost = () => {
     }
     
     setLikedComments(newLikedComments);
-    localStorage.setItem(`blog-comments-${id}`, JSON.stringify(comments));
+    localStorage.setItem(`blog-comments-${slug}`, JSON.stringify(comments));
   };
 
   const handleReply = (commentId: string) => {
@@ -288,7 +291,7 @@ const BlogPost = () => {
     });
 
     setComments(updatedComments);
-    localStorage.setItem(`blog-comments-${id}`, JSON.stringify(updatedComments));
+    localStorage.setItem(`blog-comments-${slug}`, JSON.stringify(updatedComments));
     setReplyContent("");
     setReplyingTo(null);
     
@@ -359,7 +362,7 @@ const BlogPost = () => {
                 {currentPost.content}
               </p>
 
-              {id === "7" ? (
+              {currentPost.slug === "inventory-mismatch-stock-losses-erp-stock-accuracy" ? (
                 // ERP Blog Post Content
                 <>
                   <p>
@@ -722,7 +725,7 @@ const BlogPost = () => {
                   </ul>
                   <p>This is how businesses achieve near 100% stock accuracy and drastically reduce losses.</p>
                 </>
-              ) : id === "8" ? (
+              ) : currentPost.slug === "delayed-purchase-approvals-erp-workflow-automation" ? (
                 // ERP Procurement Blog Post Content
                 <>
                   <p>
@@ -966,7 +969,7 @@ const BlogPost = () => {
                   </ul>
                   <p>Your entire supply chain becomes faster and more reliable.</p>
                 </>
-              ) : id === "9" ? (
+              ) : currentPost.slug === "manual-sales-followups-erp-crm-conversion-rate" ? (
                 // CRM Sales Blog Post Content
                 <>
                   <p>
@@ -1395,7 +1398,7 @@ const BlogPost = () => {
             <h3 className="font-sans text-2xl font-bold">Related Articles</h3>
             <div className="grid md:grid-cols-2 gap-6">
               {relatedPosts.map((post) => (
-                <Link key={post.id} to={`/blog/${post.id}`}>
+                <Link key={post.id} to={`/blog/${post.slug}`}>
                   <Card className="group cursor-pointer hover-lift border-0">
                     <div className="relative h-32 overflow-hidden">
                       <img 

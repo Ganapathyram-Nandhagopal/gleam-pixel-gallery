@@ -12,6 +12,7 @@ import blogManualSales from "@/assets/blog-manual-sales.png";
 const blogPosts = [
   {
     id: 7,
+    slug: "inventory-mismatch-stock-losses-erp-stock-accuracy",
     title: "Inventory Mismatch & Stock Losses — How ERP Brings 100% Stock Accuracy",
     excerpt: "Discover how ERP systems eliminate inventory mismatches and achieve near-perfect stock accuracy with real-world examples.",
     category: "ERP & Business",
@@ -21,6 +22,7 @@ const blogPosts = [
   },
   {
     id: 8,
+    slug: "delayed-purchase-approvals-erp-workflow-automation",
     title: "Delayed Purchase Approvals — How ERP Workflow Automation Speeds Up Procurement",
     excerpt: "Learn how ERP workflow automation eliminates approval bottlenecks and reduces procurement time by 70-80%.",
     category: "ERP & Business",
@@ -30,6 +32,7 @@ const blogPosts = [
   },
   {
     id: 9,
+    slug: "manual-sales-followups-erp-crm-conversion-rate",
     title: "Manual Sales Follow-ups — How ERP CRM Increases Conversion Rate by 40%",
     excerpt: "Discover how ERP-integrated CRM transforms sales follow-ups and dramatically improves conversion rates.",
     category: "ERP & Business",
@@ -79,7 +82,7 @@ const Blog = () => {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {filteredPosts.map((post, index) => (
-              <Link key={post.id} to={`/blog/${post.id}`}>
+              <Link key={post.id} to={`/blog/${post.slug}`}>
                 <Card 
                   className="group cursor-pointer hover-lift h-full border-0"
                   style={{ animationDelay: `${index * 100}ms` }}
