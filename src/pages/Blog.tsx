@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import blogErpInventory from "@/assets/blog-erp-inventory-branded.png";
-import blogErpProcurement from "@/assets/blog-erp-procurement.png";
-import blogCrmSales from "@/assets/blog-crm-sales-branded.png";
+import blogInventoryMismatch from "@/assets/blog-inventory-mismatch.png";
+import blogDelayedApprovals from "@/assets/blog-delayed-approvals.png";
+import blogManualSales from "@/assets/blog-manual-sales.png";
 
 const blogPosts = [
   {
@@ -17,7 +17,7 @@ const blogPosts = [
     category: "ERP & Business",
     date: "Mar 20, 2025",
     readTime: "12 min read",
-    image: blogErpInventory,
+    image: blogInventoryMismatch,
   },
   {
     id: 8,
@@ -26,7 +26,7 @@ const blogPosts = [
     category: "ERP & Business",
     date: "Mar 25, 2025",
     readTime: "10 min read",
-    image: blogErpProcurement,
+    image: blogDelayedApprovals,
   },
   {
     id: 9,
@@ -35,7 +35,7 @@ const blogPosts = [
     category: "ERP & Business",
     date: "Mar 28, 2025",
     readTime: "11 min read",
-    image: blogCrmSales,
+    image: blogManualSales,
   },
 ];
 
